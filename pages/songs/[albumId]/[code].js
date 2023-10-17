@@ -1,5 +1,5 @@
 import { AxiosServer } from "@/services";
-import { SongList } from "@/pages/components";
+import { SongList } from "@/components";
 
 function SongsPage({ Songs, loadingServer }) {
   return (

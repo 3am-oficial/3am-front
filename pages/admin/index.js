@@ -6,7 +6,7 @@ import {
   Inputs,
   InputsFile,
   AlbumList,
-} from "../components";
+} from "../../components";
 import { AxiosServer } from "@/services";
 
 const Admin = ({ Albums, loadingServer }) => {
