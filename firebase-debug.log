@@ -1,0 +1,21 @@
+[debug] [2023-10-17T19:02:35.514Z] ----------------------------------------------------------------------
+[debug] [2023-10-17T19:02:35.516Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\japod\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-10-17T19:02:35.516Z] CLI Version:   12.7.0
+[debug] [2023-10-17T19:02:35.517Z] Platform:      win32
+[debug] [2023-10-17T19:02:35.517Z] Node Version:  v18.15.0
+[debug] [2023-10-17T19:02:35.518Z] Time:          Tue Oct 17 2023 15:02:35 GMT-0400 (hora de Venezuela)
+[debug] [2023-10-17T19:02:35.518Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-10-17T19:02:35.528Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-10-17T19:02:35.529Z] > authorizing via signed-in user (martinezcaceresjosem@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\japod\Documents\JoseMartinez\3amofficial\3am-official
+
