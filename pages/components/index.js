@@ -1,6 +1,10 @@
-export { default as Inputs } from './Inputs/Inputs'
-export { default as Button } from './Button/Button'
-export { default as SideNav } from './SideNav/SideNav'
-export { default as Footer } from './Footer/Footer'
-export { default as SongList } from './SongList/SongList'
-export { default as Notification } from './Notification/Notification'
+export { default as Inputs } from "./Inputs/Inputs";
+export { default as Button } from "./Button/Button";
+export { default as SideNav } from "./SideNav/SideNav";
+export { default as Footer } from "./Footer/Footer";
+export { default as SongList } from "./SongList/SongList";
+export { default as Notification } from "./Notification/Notification";
+export { default as SideNavAdmin } from "./SideNavAdmin/SideNavAdmin";
+export { default as InputsFile } from "./InputsFile/InputsFile";
+export { default as AlbumList } from "./AlbumList/AlbumList";
+export { default as Loader } from "./Loader/Loader";
