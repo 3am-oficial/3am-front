@@ -2,8 +2,7 @@ import { AxiosServer } from "@/services";
 import { AlbumList, SongList } from "@/components";
 import Head from "next/head";
 
-function SongsPage({ Album, loadingServer, fromPromoPage }) {
-  console.log(fromPromoPage, "fromPromoPage");
+function SongsPage({ Album, loadingServer }) {
   return (
     <div className="container-album p-5 space-y-5">
       <Head>
@@ -22,9 +21,9 @@ function SongsPage({ Album, loadingServer, fromPromoPage }) {
         <meta property="og:image" content="/assets/images/imageUnknow.jpg" />
         <meta name="twitter:card" content="summary" />
       </Head>
-      <a href="/admin" className={`${fromPromoPage ? "hidden" : "go-back"}`}>
+      <a href="/admin" className="go-back">
         <div className="flex space-x-2">
-          <img src="/assets/icons/backarrow.svg" alt="" />
+          <img src="/assets/icons/backarrow.svg" alt="imageArrow" />
           <p>Regresar</p>
         </div>
       </a>
@@ -32,8 +31,7 @@ function SongsPage({ Album, loadingServer, fromPromoPage }) {
         <img
           src={"/assets/images/imageUnknow.jpg"}
           alt={`${Album.name} - ${Album.artist}`}
-          width="150px"
-          className="rounded-lg"
+          className="rounded-lg w-10 h-10 md:w-20 md:h-20 lg:w-48 lg:h-48"
         />
         <div className="flex flex-col justify-between">
           <h2 className="title-action">{Album.name}</h2>
@@ -50,10 +48,8 @@ function SongsPage({ Album, loadingServer, fromPromoPage }) {
 }
 
 export async function getServerSideProps(context) {
-  const { query } = context;
+  const { query, res } = context;
   const { albumId, code, fromPromoPage } = query;
-
-  console.log(query, "jkasbdlkjabsdlkjbal");
 
   try {
     const response = await AxiosServer.get(
@@ -64,18 +60,28 @@ export async function getServerSideProps(context) {
     return {
       props: {
         Album,
-        loadingServer: false, // Cambiar a false cuando los datos estén listos
+        loadingServer: false,
         fromPromoPage: fromPromoPage === "true",
       },
     };
   } catch (error) {
-    return {
-      props: {
-        Album: [],
-        loadingServer: false, // Cambiar a false en caso de error
-        fromPromoPage: fromPromoPage === "true",
-      },
-    };
+    if (error.response && error.response.data.code === 401) {
+      return {
+        redirect: {
+          destination: `/album/${albumId}?error=invalid`,
+          permanent: false,
+        },
+      };
+    } else {
+      console.log(error.response.data.code, "kasndansdnajsdnajsadna");
+      return {
+        props: {
+          Album: [],
+          loadingServer: false,
+          fromPromoPage: fromPromoPage === "true",
+        },
+      };
+    }
   }
 }
 
