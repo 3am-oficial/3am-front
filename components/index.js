@@ -7,4 +7,4 @@ export { default as Notification } from "./Notification/Notification";
 export { default as SideNavAdmin } from "./SideNavAdmin/SideNavAdmin";
 export { default as InputsFile } from "./InputsFile/InputsFile";
 export { default as AlbumList } from "./AlbumList/AlbumList";
-export { default as Loader } from "./Loader/Loader";
+export { default as InputFileAudio } from "./InputFileAudio/InputFileAudio";

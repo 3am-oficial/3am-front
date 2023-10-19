@@ -4,10 +4,10 @@ import {
   Button,
   SideNavAdmin,
   Inputs,
-  InputsFile,
   AlbumList,
+  InputFileAudio,
 } from "../../components";
-import { AxiosServer } from "@/services";
+import { AxiosServer, AxiosClient } from "@/services";
 
 const Admin = ({ Albums, loadingServer }) => {
   const [tab, setTab] = useState(0);
@@ -18,22 +18,45 @@ const Admin = ({ Albums, loadingServer }) => {
     artistName: "3AM",
     imageFile: null,
     songCode: "",
+    audioSong: null,
+    nameSong: "",
+    urlSong: "",
+    urlImage: "",
+    albumId: "NO3inUYdSkezEJN96FAp",
   });
 
   const handleAlbumSelect = (value) => {
-    router.push(`/songs/${value.id}/${value.code}`);
+    router.push(`/album/${value.id}/${value.code}`);
   };
   const handlerInputchange = (e) => {
     const { name, value } = e.target;
+
+    console.log(e.target, "aksdkjabndslkbnaslkdba");
 
     setState((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   };
-  const requestSol = () => {
-    const { albumName, artistName, imageFile, songCode } = state;
+  const createSong = () => {
+    const { nameSong, albumId, urlSong } = state;
 
+    const body = {
+      name: nameSong,
+      albumId: albumId,
+      file: urlSong,
+    };
+
+    AxiosClient.post("/createSong", body)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const createAlbum = () => {
     const body = {
       name: albumName,
       artist: artistName,
@@ -41,15 +64,13 @@ const Admin = ({ Albums, loadingServer }) => {
       code: songCode,
     };
 
-    console.log(body, "el body que se enviara a backend");
-
-    // Axios.post("/createAlbum", body)
-    //   .then((response) => {
-    //     console.log(response);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    AxiosClient.post("/createSong", body)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -83,11 +104,12 @@ const Admin = ({ Albums, loadingServer }) => {
                 value={state.artistName}
                 onChange={handlerInputchange}
               />
-              <InputsFile
-                name="imageFile"
-                label="Seleccione la imagen del album"
-                placeholder="Seleccione una imagen"
-                value={state.imageFile}
+
+              <Inputs
+                placeholder="Ingrese la URL de la imagen"
+                label="URL de la imagen"
+                name="urlImage"
+                value={state.urlImage}
                 onChange={handlerInputchange}
               />
               <Inputs
@@ -100,11 +122,38 @@ const Admin = ({ Albums, loadingServer }) => {
             </div>
 
             <div className="lg:w-1/4 w-full mt-5">
-              <Button onClick={requestSol} label="Crear Album" />
+              <Button onClick={createAlbum} label="Crear Album" />
             </div>
           </div>
         )}
-        {tab === 2 && <div>Cargar cancion</div>}
+        {tab === 2 && (
+          <div className="space-y-20">
+            <Inputs
+              placeholder="Coloque el nombre de la cancion"
+              label="Nombre de la cancion"
+              name="nameSong"
+              value={state.nameSong}
+              onChange={handlerInputchange}
+            />
+
+            <Inputs
+              placeholder="URL de la cancion"
+              label="Introduzca la url de la cancion"
+              name="urlSong"
+              value={state.urlSong}
+              onChange={handlerInputchange}
+            />
+
+            <InputFileAudio
+              name="audioFile"
+              labelText="Cancion"
+              placeholder="Seleccione una cancion"
+              value={state.audioSong}
+              onChange={handlerInputchange}
+            />
+            <Button onClick={createSong} label="Cargar cancion" />
+          </div>
+        )}
       </div>
     </div>
   );
