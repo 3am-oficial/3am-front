@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Lottie from "lottie-react";
+import lock from "@/public/lock.json";
 import { Inputs, Button } from "@/components";
 import { useRouter } from "next/router";
 
@@ -17,23 +19,32 @@ const albumCode = ({ albumId }) => {
   };
 
   return (
-    <div className="container-album p-5 flex flex-col justify-center items-center space-y-10">
-      <h3>Ingrese su Código Exclusivo</h3>
-      <p>
-        Ingrese el código exclusivo que se le ha proporcionado para acceder a
-        contenido especial.
-      </p>
+    <div class="container-album lg:h-auto md:py-20 h-screen p-5 max-w-[900px] mx-auto flex justify-center items-center">
+      <div class="max-w-screen-xl mx-auto text-center">
+        <h2 class="text-3xl font-semibold mb-4">Ingrese su Código Exclusivo</h2>
+        <p class="mb-8">
+          Ingrese el código exclusivo que se le ha proporcionado para acceder a
+          contenido especial.
+        </p>
+        <div class="md:flex mt-12">
+          <div class="md:w-1/2 p-4 flex justify-center items-center">
+            <Lottie animationData={lock} className="w-3/4" loop={true} />
+          </div>
 
-      <div className="w-1/4">
-        <Inputs
-          label="Codigo VIP"
-          placeholder="Ingrese el codigo"
-          value={code}
-          onChange={handlerInputchange}
-        />
-      </div>
-      <div className="w-1/4">
-        <Button label="Ingresar" onClick={goToPage} />
+          <div class="md:w-1/2 p-4 flex flex-col justify-center items-center">
+            <div class="w-full md:w-3/4">
+              <Inputs
+                label="Codigo VIP"
+                placeholder="Ingrese el código"
+                value={code}
+                onChange={handlerInputchange}
+              />
+            </div>
+            <div class="mt-4 w-full md:w-3/4">
+              <Button label="Ingresar" onClick={goToPage} />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

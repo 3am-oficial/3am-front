@@ -2,6 +2,7 @@ import { AxiosServer } from "@/services";
 import { AlbumList, SongList } from "@/components";
 import Head from "next/head";
 
+
 function SongsPage({ Album, loadingServer, fromPromoPage }) {
   console.log(fromPromoPage, "fromPromoPage");
   return (

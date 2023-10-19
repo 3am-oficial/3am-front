@@ -5,15 +5,17 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body>
+      <body className="overflow-hidden">
         <header>
           <h1 className="text-center border-b border-b-stone-600">
             3AM Official
           </h1>
           <SideNav />
         </header>
-        <Main />
-        <Footer />
+        <section className="h-screen overflow-y-auto">
+          <Main />
+          <Footer />
+        </section>
         <NextScript />
       </body>
     </Html>
