@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className="overflow-hidden">
+      <body>
         <header>
           <h1 className="text-center border-b border-b-stone-600">
             3AM Official

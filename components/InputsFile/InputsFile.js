@@ -25,7 +25,7 @@ function InputFile({ label, name, onChange }) {
     try {
       setLoad(true);
       const response = await fetch(
-        "http://127.0.0.1:5001/am-oficial/us-central1/uploadImage",
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/uploadImage`,
         {
           method: "POST",
           body: JSON.stringify({ image: base64Data, extension }),

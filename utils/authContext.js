@@ -11,7 +11,7 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (!user) {
+      if (!user && router.asPath === "/admin") {
         router.push("/admin/login");
       }
       setUser(user);

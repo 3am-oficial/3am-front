@@ -15,7 +15,7 @@ function InputFileAudio({ labelText, name, onChange, value }) {
       formData.append("audio", file);
 
       const response = await fetch(
-        "http://127.0.0.1:5001/am-oficial/us-central1/uploadAudio",
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/uploadAudio`,
         {
           method: "POST",
           body: formData,
