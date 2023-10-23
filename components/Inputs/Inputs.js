@@ -11,7 +11,7 @@ function Inputs({
 }) {
   return (
     <div className="flex flex-col space-y-1">
-      <label>{label}</label>
+      <label className="text-left">{label}</label>
       <input
         type={type}
         name={name}

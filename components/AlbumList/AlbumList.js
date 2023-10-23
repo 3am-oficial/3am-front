@@ -1,15 +1,8 @@
 import React from "react";
 
 const AlbumList = ({ albumList, selectAlbum }) => {
-  const handleShareClick = (element, event) => {
-    event.stopPropagation(); // Detiene la propagación del evento
-    const shareURL = `http://localhost:3001/album/${element.id}/ y tu codigo VIP es ${element.code}`;
-    navigator.clipboard.writeText(shareURL);
-    alert("Enlace copiado al portapapeles: " + shareURL);
-  };
-
   return (
-    <ul>
+    <ul className="flex space-x-10">
       {albumList.map((element, index) => {
         return (
           <li
@@ -17,17 +10,18 @@ const AlbumList = ({ albumList, selectAlbum }) => {
             className="item-album"
             onClick={() => selectAlbum(element)}
           >
-            <img
-              src={
-                element.image ? element.image : "/assets/images/imageUnknow.jpg"
-              }
-              className="w-40 rounded-lg"
-            />
-            <p className="mt-2 ml-1">
-              {element.name} • {element.artist}
-            </p>
-            <div onClick={(event) => handleShareClick(element, event)}>
-              compartir
+            <div className="flex flex-col justify-center items-center">
+              <img
+                src={
+                  element.image
+                    ? element.image
+                    : "/assets/images/imageUnknow.jpg"
+                }
+                className=" w-20 h-20 lg:w-40 lg:h-40 rounded-lg"
+              />
+              <p className="mt-2 ml-1">
+                {element.name} • {element.artist}
+              </p>
             </div>
           </li>
         );

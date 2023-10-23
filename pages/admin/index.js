@@ -1,28 +1,33 @@
-import { useRouter } from "next/router";
 import React, { useState } from "react";
 import {
   Button,
   SideNavAdmin,
   Inputs,
   AlbumList,
+  Select,
+  InputsFile,
   InputFileAudio,
 } from "../../components";
 import { AxiosServer, AxiosClient } from "@/services";
+import { toast } from "react-toastify";
+import { useRouter } from "next/router";
+import { useAuth } from "@/utils/authContext";
 
 const Admin = ({ Albums, loadingServer }) => {
-  const [tab, setTab] = useState(0);
   const router = useRouter();
+  const { user } = useAuth();
+  const [tab, setTab] = useState(0);
 
   const [state, setState] = useState({
     albumName: "",
     artistName: "3AM",
-    imageFile: null,
-    songCode: "",
+    songCodeAlbum: "",
+    songCodeSong: "",
     audioSong: null,
     nameSong: "",
     urlSong: "",
     urlImage: "",
-    albumId: "NO3inUYdSkezEJN96FAp",
+    albumId: "",
   });
 
   const handleAlbumSelect = (value) => {
@@ -31,158 +36,192 @@ const Admin = ({ Albums, loadingServer }) => {
   const handlerInputchange = (e) => {
     const { name, value } = e.target;
 
-    console.log(e.target, "aksdkjabndslkbnaslkdba");
-
     setState((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   };
+
+  const captUrlImage = (file) => {
+    setState((prevState) => ({
+      ...prevState,
+      urlImage: file,
+    }));
+  };
   const createSong = () => {
-    const { nameSong, albumId, urlSong } = state;
+    const { nameSong, albumId, urlSong, songCodeSong } = state;
+
+    if (!nameSong || !albumId || !urlSong || !songCodeSong) {
+      toast.warn("Existen campos vacios");
+      return;
+    }
 
     const body = {
       name: nameSong,
       albumId: albumId,
       file: urlSong,
+      songCode: songCodeSong,
     };
 
     AxiosClient.post("/createSong", body)
-      .then((response) => {
-        console.log(response);
+      .then(() => {
+        toast.success("Cancion cargada con exito");
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+        toast.success("Error inesperado");
       });
   };
 
   const createAlbum = () => {
+    const { albumName, artistName, urlImage, songCodeAlbum } = state;
+
+    if (!albumName || !artistName || !urlImage || !songCodeAlbum) {
+      toast.warn("Existen campos vacios");
+      return;
+    }
     const body = {
       name: albumName,
       artist: artistName,
-      image: imageFile,
-      code: songCode,
+      image: urlImage,
+      code: songCodeAlbum,
     };
 
-    AxiosClient.post("/createSong", body)
-      .then((response) => {
-        console.log(response);
+    AxiosClient.post("/createAlbum", body)
+      .then(() => {
+        toast.success("Album Creado con Exito");
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+        toast.success("Error inesperado");
       });
   };
 
   return (
-    <div className="space-y-5">
-      <SideNavAdmin
-        onTabSelect={(selectedTab) => setTab(selectedTab)}
-        tab={tab}
-      />
-      <div className="space-y-10 container-album  p-10">
-        {tab === 0 && !loadingServer && (
-          <div>
-            <h2 className="mb-5 title-action text-center">Lista de Albunes</h2>
-            <AlbumList albumList={Albums} selectAlbum={handleAlbumSelect} />
-          </div>
-        )}
-        {tab === 1 && (
-          <div className="flex flex-col items-center justify-center">
-            <div className="title-action w-full text-center">Crear Album</div>
-            <div className="lg:w-1/2 w-full space-y-10">
-              <Inputs
-                placeholder="Coloque el nombre del album"
-                label="Nombre del album"
-                name="albumName"
-                value={state.albumName}
-                onChange={handlerInputchange}
-              />
-              <Inputs
-                placeholder="3AM Official"
-                label="Nombre del artista"
-                name="artistName"
-                value={state.artistName}
-                onChange={handlerInputchange}
-              />
-
-              <Inputs
-                placeholder="Ingrese la URL de la imagen"
-                label="URL de la imagen"
-                name="urlImage"
-                value={state.urlImage}
-                onChange={handlerInputchange}
-              />
-              <Inputs
-                placeholder="Ingrese código de la canción"
-                label="Código"
-                name="songCode"
-                value={state.songCode}
-                onChange={handlerInputchange}
-              />
+    user && (
+      <div className="space-y-5">
+        <SideNavAdmin
+          onTabSelect={(selectedTab) => setTab(selectedTab)}
+          tab={tab}
+        />
+        <div className="space-y-10 container-album  p-10">
+          {tab === 0 && !loadingServer && (
+            <div>
+              <h2 className="mb-5 title-action text-center">
+                Lista de Albunes
+              </h2>
+              <AlbumList albumList={Albums} selectAlbum={handleAlbumSelect} />
             </div>
+          )}
+          {tab === 1 && (
+            <div className="flex flex-col items-center justify-center">
+              <div className="title-action w-full text-center">Crear Album</div>
+              <div className="lg:w-1/2 w-full space-y-10">
+                <Inputs
+                  placeholder="Coloque el nombre del album"
+                  label="Nombre del album"
+                  name="albumName"
+                  value={state.albumName}
+                  onChange={handlerInputchange}
+                />
+                <Inputs
+                  placeholder="3AM Official"
+                  label="Nombre del artista"
+                  name="artistName"
+                  value={state.artistName}
+                  onChange={handlerInputchange}
+                />
+                <Inputs
+                  placeholder="Ingrese código promocional"
+                  label="Código"
+                  name="songCodeAlbum"
+                  value={state.songCodeAlbum}
+                  onChange={handlerInputchange}
+                />
+                <InputsFile
+                  label="Seleccione un archivo"
+                  value={state.urlImage}
+                  name="urlImage"
+                  onChange={captUrlImage}
+                />
+              </div>
 
-            <div className="lg:w-1/4 w-full mt-5">
-              <Button onClick={createAlbum} label="Crear Album" />
+              <div className="lg:w-1/4 w-full mt-5">
+                <Button onClick={createAlbum} label="Crear Album" />
+              </div>
             </div>
-          </div>
-        )}
-        {tab === 2 && (
-          <div className="space-y-20">
-            <Inputs
-              placeholder="Coloque el nombre de la cancion"
-              label="Nombre de la cancion"
-              name="nameSong"
-              value={state.nameSong}
-              onChange={handlerInputchange}
-            />
+          )}
+          {tab === 2 && (
+            <div className="space-y-20 flex flex-col items-center">
+              <div className="title-action w-full text-center">
+                Crear Cancion
+              </div>
+              <div className="lg:w-1/2 w-full space-y-10">
+                <Inputs
+                  placeholder="Coloque el nombre de la cancion"
+                  label="Nombre de la cancion"
+                  name="nameSong"
+                  value={state.nameSong}
+                  onChange={handlerInputchange}
+                />
 
-            <Inputs
-              placeholder="URL de la cancion"
-              label="Introduzca la url de la cancion"
-              name="urlSong"
-              value={state.urlSong}
-              onChange={handlerInputchange}
-            />
+                <Inputs
+                  placeholder="URL de la cancion proporcionado por firebase"
+                  label="Introduzca la url de la cancion"
+                  name="urlSong"
+                  value={state.urlSong}
+                  onChange={handlerInputchange}
+                />
 
-            <InputFileAudio
-              name="audioFile"
-              labelText="Cancion"
-              placeholder="Seleccione una cancion"
-              value={state.audioSong}
-              onChange={handlerInputchange}
-            />
-            <Button onClick={createSong} label="Cargar cancion" />
-          </div>
-        )}
+                <Select
+                  options={Albums}
+                  onChange={handlerInputchange}
+                  value={state.albumId}
+                  name="albumId"
+                />
+
+                <Inputs
+                  placeholder="Ingrese código promocional"
+                  label="Código"
+                  name="songCodeSong"
+                  value={state.songCodeSong}
+                  onChange={handlerInputchange}
+                />
+              </div>
+              {/* <InputFileAudio
+                // name="audioFile"
+                labelText="Cancion"
+                // value={state.urlSong}
+                // onChange={handlerInputchange}
+              /> */}
+              <div className="lg:w-1/4 w-full mt-5">
+                <Button onClick={createSong} label="Cargar cancion" />
+              </div>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    )
   );
 };
 
-// ...
-
-export async function getServerSideProps(context) {
-  const token = context.req.headers.token;
-
+export async function getServerSideProps() {
   try {
     const response = await AxiosServer.get(`/getAlbums`);
     const Albums = response.data.data;
-    let loadingServer = true;
 
     return {
       props: {
         Albums,
-        loadingServer: !loadingServer,
+        loadingServer: false,
       },
     };
   } catch (error) {
+    console.error(error); // Agrega esta línea para depurar errores
     return {
       props: {
         Albums: [],
-        loadingServer: !loadingServer,
+        loadingServer: false,
       },
     };
   }
 }
-
 export default Admin;
