@@ -1,6 +1,7 @@
 import { AxiosServer } from "@/services";
-import { AlbumList, SongList } from "@/components";
+import { SongList } from "@/components";
 import Head from "next/head";
+import { handleShareClick } from "@/utils/sharedLink";
 
 function SongsPage({ Album, loadingServer }) {
   return (
@@ -27,19 +28,26 @@ function SongsPage({ Album, loadingServer }) {
           <p>Regresar</p>
         </div>
       </a>
-      <div className="flex space-x-5">
-        <img
-          src={"/assets/images/imageUnknow.jpg"}
-          alt={`${Album.name} - ${Album.artist}`}
-          className="rounded-lg w-10 h-10 md:w-20 md:h-20 lg:w-48 lg:h-48"
-        />
-        <div className="flex flex-col justify-between">
-          <h2 className="title-action">{Album.name}</h2>
-          <div className="flex space-x-5">
-            <strong>{Album.artist}</strong>
-            <p>{Album.songs.length} • canciones</p>
+      <div className="flex space-x-5 justify-between w-full items-center">
+        <div className="flex space-x-5 ">
+          <img
+            src={"/assets/images/imageUnknow.jpg"}
+            alt={`${Album.name} - ${Album.artist}`}
+            className="rounded-lg w-16 h-16 md:w-20 md:h-20 lg:w-48 lg:h-48"
+          />
+          <div className="flex flex-col justify-between">
+            <h2 className="title-action">{Album.name}</h2>
+            <div className="flex space-x-5">
+              <strong>{Album.artist}</strong>
+              <p>{Album.songs.length} • canciones</p>
+            </div>
           </div>
         </div>
+        <img
+          src="/assets/icons/shared.svg"
+          className="shared-icon w-12 cursor-pointer"
+          onClick={() => handleShareClick(Album, "album")}
+        />
       </div>
       <hr />
       {!loadingServer && <SongList songs={Album.songs} />}
@@ -48,7 +56,7 @@ function SongsPage({ Album, loadingServer }) {
 }
 
 export async function getServerSideProps(context) {
-  const { query, res } = context;
+  const { query } = context;
   const { albumId, code, fromPromoPage } = query;
 
   try {
@@ -65,7 +73,7 @@ export async function getServerSideProps(context) {
       },
     };
   } catch (error) {
-    if (error.response && error.response.data.code === 401) {
+    if (error.response && error.response.data.code) {
       return {
         redirect: {
           destination: `/album/${albumId}?error=invalid`,
@@ -73,7 +81,6 @@ export async function getServerSideProps(context) {
         },
       };
     } else {
-      console.log(error.response.data.code, "kasndansdnajsdnajsadna");
       return {
         props: {
           Album: [],

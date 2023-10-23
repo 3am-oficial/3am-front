@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import Lottie from "lottie-react";
-import lock from "@/public/lock.json";
-import errorAnimation from "@/public/404.json";
-import { Inputs, Button } from "@/components";
 import { useRouter } from "next/router";
+import errorAnimation from "@/public/404.json";
+import lock from "@/public/lock.json";
+import Lottie from "lottie-react";
+import { Inputs, Button } from "@/components";
 import { toast } from "react-toastify";
 
-const albumCode = ({ albumId }) => {
+const OnlySong = ({ SongId }) => {
   const [code, setCode] = useState("");
   const router = useRouter();
-
   const errorParam = router.query.error;
 
   const handlerInputChange = (e) => {
@@ -21,7 +20,7 @@ const albumCode = ({ albumId }) => {
       toast.error("Campos Vacio");
       return;
     }
-    router.push(`/album/${albumId}/${code}`);
+    router.push(`/song/${SongId}/${code}`);
   };
 
   return (
@@ -69,15 +68,15 @@ const albumCode = ({ albumId }) => {
   );
 };
 
-export default albumCode;
+export default OnlySong;
 
 export async function getServerSideProps(context) {
   const { query } = context;
-  const { albumId } = query;
+  const { SongId } = query;
 
   return {
     props: {
-      albumId,
+      SongId,
     },
   };
 }

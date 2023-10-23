@@ -1,38 +1,31 @@
 import React from "react";
-import { AxiosClient } from "@/services";
-import axios from "axios";
 
 function InputFileAudio({ labelText, name, onChange, value }) {
-  // Manejar el cambio de archivo
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
+    console.log(selectedFile, "jndsaljndkjasnbdkja");
     if (selectedFile) {
-      // Realizar la lógica para enviar el archivo al servidor
-      uploadFile(selectedFile);
+      uploadAudio(selectedFile);
     }
   };
 
-  const uploadFile = async (file) => {
-    const audioFile = document.getElementById("file-input").files[0]; // Obtén el archivo de entrada de audio
-    const formData = new FormData();
-    formData.append("audio", audioFile, file); // Cambiar "image" a "audio" si es para archivos de audio.
-    const config = {
-      headers: {
-        "Content-Type": "audio/mpeg", // Establece el tipo de contenido deseado
-      },
-    };
+  const uploadAudio = async (file) => {
     try {
-      const response = await axios.post(
+      let formData = new FormData();
+      formData.append("audio", file);
+
+      const response = await fetch(
         "http://127.0.0.1:5001/am-oficial/us-central1/uploadAudio",
-        formData,
-        config
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            "content-type": "audio/mpeg",
+          },
+        }
       );
 
-      const audioUrl = response.data.audioUrl;
-
-      if (onChange) {
-        onChange(audioUrl);
-      }
+      // Resto del código
     } catch (error) {
       console.error("Error al cargar el archivo:", error);
     }
@@ -44,7 +37,6 @@ function InputFileAudio({ labelText, name, onChange, value }) {
         <label className="custom-file-input mb-5">
           {labelText}
           <input
-            id="file-input"
             accept="audio/mpeg audio/mp3"
             type="file"
             name={name}

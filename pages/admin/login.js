@@ -1,13 +1,18 @@
 import React from "react";
-import { Inputs, Button, Notification } from "../../components";
+import { Inputs, Button } from "../../components";
 import { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { toast } from "react-toastify";
+import { useRouter } from "next/router";
+import { auth } from "../../firebase/index";
 
-const login = ({ infoInputUser }) => {
+const login = () => {
   const [state, setState] = useState({
     user: "",
     password: "",
     notification: false,
   });
+  const router = useRouter();
 
   const handlerInputchange = (e) => {
     const { name, value: targetValue } = e.target;
@@ -17,13 +22,27 @@ const login = ({ infoInputUser }) => {
       [name]: targetValue,
     }));
   };
+  const login = async () => {
+    const { user, password } = state;
 
-  const login = () => {
-    const body = {
-      user: state.user,
-      password: state.password,
-    };
-    console.log(body, "jkanskjnaslkdjn");
+    if (!user || !password) {
+      toast.warn("Existen Campos Vacios");
+      return;
+    }
+    signInWithEmailAndPassword(auth, user, password)
+      .then(() => {
+        toast.success("Bienvenido");
+        router.push(`/admin`);
+      })
+      .catch((err) => {
+        if (err.message.includes("auth/invalid-email")) {
+          toast.error("Email invalido");
+        }
+
+        if (err.message.includes("auth/invalid-login-credentials")) {
+          toast.error("Credenciales invalidas");
+        }
+      });
   };
 
   return (
@@ -44,8 +63,6 @@ const login = ({ infoInputUser }) => {
           type="password"
           value={state.password}
         />
-
-        {state.notification && <Notification />}
       </div>
 
       <div className="w-1/6">
@@ -54,11 +71,5 @@ const login = ({ infoInputUser }) => {
     </div>
   );
 };
-
-export async function getServerSideProps() {
-  return {
-    props: {},
-  };
-}
 
 export default login;
