@@ -25,17 +25,17 @@ const OnlySong = ({ SongId }) => {
 
   return (
     <div className="lg:h-auto h-screen flex justify-center items-center">
-      <div class="container-album p-5 md:py-20 max-w-[900px] mx-auto">
-        <div class="max-w-screen-xl mx-auto text-center">
-          <h2 class="text-3xl font-semibold mb-4">
+      <div className="container-album p-5 md:py-20 max-w-[900px] mx-auto">
+        <div className="max-w-screen-xl mx-auto text-center">
+          <h2 className="text-3xl font-semibold mb-4">
             Ingrese su Código Exclusivo
           </h2>
-          <p class="mb-8">
+          <p className="mb-8">
             Ingrese el código exclusivo que se le ha proporcionado para acceder
             a contenido especial.
           </p>
-          <div class="md:flex mt-12">
-            <div class="md:w-1/2 p-4 flex justify-center items-center">
+          <div className="md:flex mt-12">
+            <div className="md:w-1/2 p-4 flex justify-center items-center">
               <Lottie
                 animationData={errorParam ? errorAnimation : lock}
                 className="w-3/4"
@@ -43,8 +43,8 @@ const OnlySong = ({ SongId }) => {
               />
             </div>
 
-            <div class="md:w-1/2 p-4 flex flex-col justify-center items-center">
-              <div class="w-full md:w-3/4">
+            <div className="md:w-1/2 p-4 flex flex-col justify-center items-center">
+              <div className="w-full md:w-3/4">
                 <Inputs
                   label="Codigo VIP"
                   placeholder="Ingrese el código"
@@ -57,7 +57,7 @@ const OnlySong = ({ SongId }) => {
                   </span>
                 )}
               </div>
-              <div class="mt-4 w-full md:w-3/4">
+              <div className="mt-4 w-full md:w-3/4">
                 <Button label="Ingresar" onClick={goToPage} />
               </div>
             </div>
