@@ -2,11 +2,11 @@
 import axios from "axios";
 
 export const AxiosClient = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
+  baseURL: "https://us-central1-am-oficial.cloudfunctions.net",
 });
 
 export const AxiosServer = axios.create({
-  baseURL: process.env.REACT_APP_API,
+  baseURL: "https://us-central1-am-oficial.cloudfunctions.net",
   headers: {
     "Content-Type": "application/json",
   },
