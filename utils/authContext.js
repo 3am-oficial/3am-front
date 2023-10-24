@@ -14,6 +14,7 @@ export function AuthProvider({ children }) {
       if (!user && router.asPath === "/admin") {
         router.push("/admin/login");
       }
+      
       setUser(user);
     });
 
