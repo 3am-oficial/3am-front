@@ -97,7 +97,7 @@ const Admin = ({ Albums, loadingServer }) => {
 
   return (
     user && (
-      <div className="space-y-5">
+      <div className="space-y-5 h-screen pt-10">
         <SideNavAdmin
           onTabSelect={(selectedTab) => setTab(selectedTab)}
           tab={tab}
