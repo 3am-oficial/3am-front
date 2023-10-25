@@ -23,7 +23,7 @@ export default function Home() {
       <img
         src="/assets/images/photo1.jpg"
         alt=""
-        className="w-full h-full m-5"
+        className="w-screen h-full m-5"
       />
       {/* <img
         src="/assets/images/photo2.jpg"
