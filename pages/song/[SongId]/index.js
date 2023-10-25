@@ -24,10 +24,10 @@ const OnlySong = ({ SongId }) => {
   };
 
   return (
-    <div className="lg:h-auto h-screen flex justify-center items-center">
-      <div className="container-album p-5 md:py-20 max-w-[900px] mx-auto">
+    <div className="lg:h-auto h-screen flex mt-[40px] justify-center items-center">
+      <div className="container-album p-5 md:py-20 max-w-[900px] sm:h-auto h-screen mx-auto">
         <div className="max-w-screen-xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold mb-4">
+          <h2 className="text-3xl font-semibold mb-4 py-3">
             Ingrese su Código Exclusivo
           </h2>
           <p className="mb-8">

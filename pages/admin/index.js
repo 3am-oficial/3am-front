@@ -97,17 +97,15 @@ const Admin = ({ Albums, loadingServer }) => {
 
   return (
     user && (
-      <div className="space-y-5 h-screen pt-10">
+      <div className="space-y-5 h-screen mt-[120px]">
         <SideNavAdmin
           onTabSelect={(selectedTab) => setTab(selectedTab)}
           tab={tab}
         />
-        <div className="space-y-10 container-album  p-10">
+        <div className="space-y-10 container-album p-10">
           {tab === 0 && !loadingServer && (
             <div>
-              <h2 className="mb-5 title-action text-center">
-                Lista de Albunes
-              </h2>
+              <h2 className="mb-5 title-action ">Lista de Albunes</h2>
               <AlbumList albumList={Albums} selectAlbum={handleAlbumSelect} />
             </div>
           )}

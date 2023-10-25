@@ -47,26 +47,28 @@ const login = () => {
 
   return (
     <div className="space-y-10 flex flex-col justify-center items-center h-screen">
-      <div className="w-1/6 space-y-10">
-        <Inputs
-          name="user"
-          label="Usuario"
-          placeholder="Ingrese un usuario"
-          onChange={handlerInputchange}
-          value={state.user}
-        />
-        <Inputs
-          name="password"
-          label="Contraseña"
-          placeholder="Ingrese una contraseña"
-          onChange={handlerInputchange}
-          type="password"
-          value={state.password}
-        />
-      </div>
+      <div className="container-album w-full max-w-[550px] p-20 sm:h-auto h-screen">
+        <div className="w-full max-w-[400px] mx-auto sm:px-0 px-4  space-y-10 ">
+          <Inputs
+            name="user"
+            label="Usuario"
+            placeholder="Ingrese un usuario"
+            onChange={handlerInputchange}
+            value={state.user}
+          />
+          <Inputs
+            name="password"
+            label="Contraseña"
+            placeholder="Ingrese una contraseña"
+            onChange={handlerInputchange}
+            type="password"
+            value={state.password}
+          />
+        </div>
 
-      <div className="w-1/6">
-        <Button label="Iniciar Sesion" onClick={login} />
+        <div className="w-full max-w-[400px] mx-auto sm:px-0 px-4  mt-12">
+          <Button label="Iniciar Sesion" onClick={login} />
+        </div>
       </div>
     </div>
   );
