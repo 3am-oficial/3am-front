@@ -15,7 +15,7 @@
 }
 
 body {
-  background-image: url("/assets/images/Fondo.webp");
+  background-image: url("/assets/images/3am_background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -29,7 +29,10 @@ main {
 
 footer {
   width: 100%;
-  height: 450px;
+}
+
+.min-h-screen-nav{
+  min-height: calc(100vh - 90px);
 }
 
 .input-component {

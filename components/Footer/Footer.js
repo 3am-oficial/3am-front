@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col justify-center items-center h-screen mt-24">
-      <div className="bg-black mt-auto w-full flex items-center justify-center py-5">
+    <footer className="justify-center items-centet absolute bottom-0">
+      <div className="bg-black mt-auto w-full flex items-center justify-center py-5 absolute">
         <h1 className=" border-b  border-b-stone-600 mr-20">3AM Official</h1>
         <ul className="flex space-x-5  items-center ">
           {/* <li className="transform hover:scale-125 hover:bg-gray-200 rounded-full p-1.5">

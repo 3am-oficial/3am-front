@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="w-full flex flex-col items-center justify-center h-full">
       <video
-        src="/assets/video/gift1.mp4"
+        src="/assets/video/gift.mp4"
         autoPlay
         muted
         loop
