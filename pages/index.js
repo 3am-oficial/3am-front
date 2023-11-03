@@ -6,30 +6,26 @@ export default function Home() {
         autoPlay
         muted
         loop
-        className="w-screen"
+        className="w-full"
       ></video>
-
-      <div className="h-screen flex items-center">
-        <iframe
-          height={"60%"}
-          width={600}
-          src="https://www.youtube.com/embed/-EcojxFLIPk?si=5y-S65cdQuRE3OdW"
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          className="m-10 rounded-xl"
-        ></iframe>
-      </div>
+      <iframe
+        height="450px"
+        src="https://www.youtube.com/embed/-EcojxFLIPk?si=5y-S65cdQuRE3OdW"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        className="m-10 rounded-xl w-full lg:w-1/2"
+      ></iframe>
 
       <img
         src="/assets/images/photo1.jpg"
         alt=""
         className="w-full h-full m-5"
       />
-      {/* <img
+      <img
         src="/assets/images/photo2.jpg"
         alt=""
         className="w-full h-full m-5"
-      /> */}
+      />
     </main>
   );
 }

@@ -7,6 +7,9 @@ export default function Document() {
       <Head />
       <body>
         <header>
+          <h1 className="text-center border-b border-b-stone-600">
+            3AM Official
+          </h1>
           <SideNav />
         </header>
         <Main />

@@ -46,7 +46,7 @@ const login = () => {
   };
 
   return (
-    <div className="space-y-10 flex flex-col justify-center items-center h-screen">
+    <div className="space-y-10 flex flex-col justify-center items-center">
       <div className="w-1/6 space-y-10">
         <Inputs
           name="user"
