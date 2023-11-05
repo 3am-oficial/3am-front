@@ -1,0 +1,531 @@
+[debug] [2023-10-25T15:23:53.320Z] ----------------------------------------------------------------------
+[debug] [2023-10-25T15:23:53.322Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\japod\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-10-25T15:23:53.322Z] CLI Version:   12.7.0
+[debug] [2023-10-25T15:23:53.323Z] Platform:      win32
+[debug] [2023-10-25T15:23:53.323Z] Node Version:  v18.15.0
+[debug] [2023-10-25T15:23:53.324Z] Time:          Wed Oct 25 2023 11:23:53 GMT-0400 (hora de Venezuela)
+[debug] [2023-10-25T15:23:53.324Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-10-25T15:23:53.406Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-10-25T15:23:53.407Z] > authorizing via signed-in user (martinezcaceresjosem@gmail.com)
+[debug] [2023-10-25T15:23:53.407Z] [iam] checking project am-oficial for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-10-25T15:23:53.409Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions [none]
+[debug] [2023-10-25T15:23:53.409Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:23:53.410Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-25T15:23:54.021Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions 200
+[debug] [2023-10-25T15:23:54.021Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-25T15:23:54.022Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial [none]
+[debug] [2023-10-25T15:23:54.566Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial 200
+[debug] [2023-10-25T15:23:54.566Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial {"projectId":"am-oficial","projectNumber":"790235731261","displayName":"3am-oficial","name":"projects/am-oficial","resources":{"hostingSite":"am-oficial","storageBucket":"am-oficial.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_fd0d6857-c75b-43fa-b794-16e60493996b"}
+[debug] [2023-10-25T15:24:00.091Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/am-oficial/sites pageToken=&pageSize=10
+[debug] [2023-10-25T15:24:00.887Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/am-oficial/sites 200
+[debug] [2023-10-25T15:24:00.888Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/am-oficial/sites {"sites":[{"name":"projects/am-oficial/sites/am-oficial","defaultUrl":"https://am-oficial.web.app","appId":"1:790235731261:web:9222ac458547a3891b2154","type":"DEFAULT_SITE"}]}
+[debug] [2023-10-25T15:24:00.888Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:790235731261:web:9222ac458547a3891b2154/config [none]
+[debug] [2023-10-25T15:24:01.605Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:790235731261:web:9222ac458547a3891b2154/config 200
+[debug] [2023-10-25T15:24:01.605Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:790235731261:web:9222ac458547a3891b2154/config {"projectId":"am-oficial","appId":"1:790235731261:web:9222ac458547a3891b2154","storageBucket":"am-oficial.appspot.com","locationId":"us-central","apiKey":"AIzaSyAGbiy04HBgDIugFks51FGRJ3x0brlB5jI","authDomain":"am-oficial.firebaseapp.com","messagingSenderId":"790235731261","measurementId":"G-HDNV1PT0M1"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[info]    Linting and checking validity of types ...
+
+[info]    Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully
+
+[info]    Collecting page data ...
+
+[info]    Generating static pages (0/5) ...
+
+[info]    Generating static pages (1/5) 
+
+[info]    Generating static pages (2/5) 
+
+[info]    Generating static pages (3/5) 
+
+[info]  ✓ Generating static pages (5/5) 
+
+[info]    Finalizing page optimization ...
+
+[info]    Collecting build traces ...
+
+[info] 
+
+[info] Route (pages)                              Size     First Load JS
+┌ ○ / (368 ms)                             595 B           122 kB
+├   /_app                                  0 B             121 kB
+├ ○ /404                                   181 B           121 kB
+├ λ /admin                                 20 kB           298 kB
+├ ○ /admin/login                           773 B           279 kB
+├ λ /album/[albumId]                       872 B           279 kB
+├ λ /album/[albumId]/[code]                852 B           279 kB
+├ ○ /cart                                  250 B           121 kB
+├ λ /song/[SongId]                         873 B           279 kB
+└ λ /song/[SongId]/[code]                  609 B           122 kB
++ First Load JS shared by all              126 kB
+  ├ chunks/framework-0c7baedefba6b077.js   45.3 kB
+  ├ chunks/main-a82dbdedafde9961.js        32.8 kB
+  ├ chunks/pages/_app-add98f19b0a7a28e.js  42 kB
+  ├ chunks/webpack-06ce503ec71d61d0.js     848 B
+  └ css/e5a0f087ae296ea9.css               5.1 kB
+
+
+[info] λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+
+
+[info] Building a Cloud Function to run this application. This is needed due to:
+[info]  • non-static route /album/[albumId]/[code]
+[info]  • non-static route /album/[albumId]
+[info]  • non-static route /admin
+[info]  • non-static route /song/[SongId]
+[info]  • non-static route /song/[SongId]/[code]
+[info] 
+[debug] [2023-10-25T15:25:01.416Z] [web frameworks] effective firebase.json:  {
+  "hosting": [
+    {
+      "source": ".",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "frameworksBackend": {
+        "region": "us-central1"
+      },
+      "site": "am-oficial",
+      "rewrites": [
+        {
+          "source": "**",
+          "function": {
+            "functionId": "ssramoficial",
+            "region": "us-central1",
+            "pinTag": true
+          }
+        }
+      ],
+      "redirects": [],
+      "headers": [
+        {
+          "source": "**/*.[jt]s",
+          "headers": [
+            {
+              "key": "Set-Cookie",
+              "value": "__FIREBASE_DEFAULTS__=eyJjb25maWciOnsicHJvamVjdElkIjoiYW0tb2ZpY2lhbCIsImFwcElkIjoiMTo3OTAyMzU3MzEyNjE6d2ViOjkyMjJhYzQ1ODU0N2EzODkxYjIxNTQiLCJzdG9yYWdlQnVja2V0IjoiYW0tb2ZpY2lhbC5hcHBzcG90LmNvbSIsImxvY2F0aW9uSWQiOiJ1cy1jZW50cmFsIiwiYXBpS2V5IjoiQUl6YVN5QUdiaXkwNEhCZ0RJdWdGa3M1MUZHUkozeDBicmxCNWpJIiwiYXV0aERvbWFpbiI6ImFtLW9maWNpYWwuZmlyZWJhc2VhcHAuY29tIiwibWVzc2FnaW5nU2VuZGVySWQiOiI3OTAyMzU3MzEyNjEiLCJtZWFzdXJlbWVudElkIjoiRy1IRE5WMVBUME0xIn0sIl9hdXRoVG9rZW5TeW5jVVJMIjoiL19fc2Vzc2lvbiJ9; SameSite=Strict; Expires=2025-09-19T02:05:01.416Z; Path=/;"
+            }
+          ]
+        }
+      ],
+      "cleanUrls": true,
+      "trailingSlash": false,
+      "public": ".firebase\\am-oficial\\hosting",
+      "webFramework": "next_ssr"
+    }
+  ],
+  "functions": [
+    {
+      "source": ".firebase\\am-oficial\\functions",
+      "codebase": "firebase-frameworks-am-oficial"
+    }
+  ]
+}
+[debug] [2023-10-25T15:25:01.417Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-10-25T15:25:01.417Z] > authorizing via signed-in user (martinezcaceresjosem@gmail.com)
+[debug] [2023-10-25T15:25:01.417Z] [iam] checking project am-oficial for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-10-25T15:25:01.417Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions [none]
+[debug] [2023-10-25T15:25:01.417Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:25:01.417Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-10-25T15:25:01.769Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions 200
+[debug] [2023-10-25T15:25:01.769Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[info] 
+[info] === Deploying to 'am-oficial'...
+[info] 
+[info] i  deploying functions, hosting 
+[debug] [2023-10-25T15:25:01.772Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial [none]
+[debug] [2023-10-25T15:25:02.287Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial 200
+[debug] [2023-10-25T15:25:02.287Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial {"projectId":"am-oficial","projectNumber":"790235731261","displayName":"3am-oficial","name":"projects/am-oficial","resources":{"hostingSite":"am-oficial","storageBucket":"am-oficial.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_fd0d6857-c75b-43fa-b794-16e60493996b"}
+[info] i  functions: preparing codebase firebase-frameworks-am-oficial for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-10-25T15:25:02.290Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-10-25T15:25:02.290Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:25:02.291Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-10-25T15:25:02.291Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:25:02.292Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/cloudbuild.googleapis.com [none]
+[debug] [2023-10-25T15:25:02.292Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/cloudbuild.googleapis.com x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:25:02.292Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/artifactregistry.googleapis.com [none]
+[debug] [2023-10-25T15:25:02.293Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/artifactregistry.googleapis.com x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:25:03.177Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/runtimeconfig.googleapis.com 200
+[debug] [2023-10-25T15:25:03.177Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-10-25T15:25:03.181Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/cloudbuild.googleapis.com 200
+[debug] [2023-10-25T15:25:03.181Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-10-25T15:25:03.220Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/cloudfunctions.googleapis.com 200
+[debug] [2023-10-25T15:25:03.220Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-10-25T15:25:03.225Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/artifactregistry.googleapis.com 200
+[debug] [2023-10-25T15:25:03.225Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-10-25T15:25:03.225Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial/adminSdkConfig [none]
+[debug] [2023-10-25T15:25:03.810Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial/adminSdkConfig 200
+[debug] [2023-10-25T15:25:03.810Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial/adminSdkConfig {"projectId":"am-oficial","storageBucket":"am-oficial.appspot.com","locationId":"us-central"}
+[debug] [2023-10-25T15:25:03.811Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/am-oficial/configs [none]
+[debug] [2023-10-25T15:25:04.318Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/am-oficial/configs 200
+[debug] [2023-10-25T15:25:04.318Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/am-oficial/configs {}
+[debug] [2023-10-25T15:25:04.320Z] Validating nodejs source
+[debug] [2023-10-25T15:25:06.113Z] > [functions] package.json contents: {
+  "name": "3am-official",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^1.5.1",
+    "firebase": "^10.5.0",
+    "lottie-react": "^2.4.0",
+    "next": "13.5.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-select": "^5.7.7",
+    "react-toastify": "^9.1.3",
+    "firebase-frameworks": "^0.10.4",
+    "firebase-functions": "^4.3.0",
+    "firebase-admin": "^11.0.1"
+  },
+  "main": "server.js",
+  "engines": {
+    "node": "18"
+  }
+}
+[debug] [2023-10-25T15:25:06.113Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase firebase-frameworks-am-oficial to determine what to deploy 
+[debug] [2023-10-25T15:25:06.114Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-10-25T15:25:06.121Z] Found firebase-functions binary at 'C:\Users\japod\Documents\JoseMartinez\3amofficial\3am-official\.firebase\am-oficial\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8443
+
+[debug] [2023-10-25T15:25:06.698Z] Got response from /__/functions.yaml {"endpoints":{"ssramoficial":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"ssramoficial"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing .firebase\am-oficial\functions directory for uploading... 
+[info] i  functions: packaged C:\Users\japod\Documents\JoseMartinez\3amofficial\3am-official\.firebase\am-oficial\functions (76.46 MB) for uploading 
+[debug] [2023-10-25T15:25:10.193Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/am-oficial/locations/-/functions [none]
+[debug] [2023-10-25T15:25:11.270Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/am-oficial/locations/-/functions 200
+[debug] [2023-10-25T15:25:11.270Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/am-oficial/locations/-/functions {"functions":[{"name":"projects/am-oficial/locations/us-central1/functions/createAlbum","httpsTrigger":{"url":"https://us-central1-am-oficial.cloudfunctions.net/createAlbum","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"createAlbum","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"am-oficial@appspot.gserviceaccount.com","updateTime":"2023-10-24T18:40:54.797Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"30bf4b462266693732ff7ba19b2c1e299392a91f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-499418587366.us-central1.cloudfunctions.appspot.com/e2798585-0c4d-4270-a94f-a8be54b6222e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/functions/createAlbum"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"8e6e7236-033f-4c3a-9148-c38a74b137af","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/790235731261/locations/us-central1/builds/8e6e7236-033f-4c3a-9148-c38a74b137af","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/am-oficial/locations/us-central1/functions/createSong","httpsTrigger":{"url":"https://us-central1-am-oficial.cloudfunctions.net/createSong","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"createSong","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"am-oficial@appspot.gserviceaccount.com","updateTime":"2023-10-24T18:40:53.108Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"30bf4b462266693732ff7ba19b2c1e299392a91f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-499418587366.us-central1.cloudfunctions.appspot.com/e2798585-0c4d-4270-a94f-a8be54b6222e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/functions/createSong"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"8e6e7236-033f-4c3a-9148-c38a74b137af","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/790235731261/locations/us-central1/builds/8e6e7236-033f-4c3a-9148-c38a74b137af","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/am-oficial/locations/us-central1/functions/getAlbums","httpsTrigger":{"url":"https://us-central1-am-oficial.cloudfunctions.net/getAlbums","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"getAlbums","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"am-oficial@appspot.gserviceaccount.com","updateTime":"2023-10-24T18:40:53.132Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"30bf4b462266693732ff7ba19b2c1e299392a91f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-499418587366.us-central1.cloudfunctions.appspot.com/e2798585-0c4d-4270-a94f-a8be54b6222e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/functions/getAlbums"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"8e6e7236-033f-4c3a-9148-c38a74b137af","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/790235731261/locations/us-central1/builds/8e6e7236-033f-4c3a-9148-c38a74b137af","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/am-oficial/locations/us-central1/functions/getSongById","httpsTrigger":{"url":"https://us-central1-am-oficial.cloudfunctions.net/getSongById","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"getSongById","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"am-oficial@appspot.gserviceaccount.com","updateTime":"2023-10-24T18:40:52.987Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"30bf4b462266693732ff7ba19b2c1e299392a91f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-499418587366.us-central1.cloudfunctions.appspot.com/e2798585-0c4d-4270-a94f-a8be54b6222e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/functions/getSongById"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"8e6e7236-033f-4c3a-9148-c38a74b137af","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/790235731261/locations/us-central1/builds/8e6e7236-033f-4c3a-9148-c38a74b137af","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/am-oficial/locations/us-central1/functions/getSongsByAlbumId","httpsTrigger":{"url":"https://us-central1-am-oficial.cloudfunctions.net/getSongsByAlbumId","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"getSongsByAlbumId","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"am-oficial@appspot.gserviceaccount.com","updateTime":"2023-10-24T18:40:53.551Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"30bf4b462266693732ff7ba19b2c1e299392a91f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-499418587366.us-central1.cloudfunctions.appspot.com/e2798585-0c4d-4270-a94f-a8be54b6222e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/functions/getSongsByAlbumId"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"8e6e7236-033f-4c3a-9148-c38a74b137af","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/790235731261/locations/us-central1/builds/8e6e7236-033f-4c3a-9148-c38a74b137af","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/am-oficial/locations/us-central1/functions/registerUser","httpsTrigger":{"url":"https://us-central1-am-oficial.cloudfunctions.net/registerUser","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"registerUser","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"am-oficial@appspot.gserviceaccount.com","updateTime":"2023-10-24T18:40:54.064Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"30bf4b462266693732ff7ba19b2c1e299392a91f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-499418587366.us-central1.cloudfunctions.appspot.com/e2798585-0c4d-4270-a94f-a8be54b6222e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/functions/registerUser"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"8e6e7236-033f-4c3a-9148-c38a74b137af","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/790235731261/locations/us-central1/builds/8e6e7236-033f-4c3a-9148-c38a74b137af","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/am-oficial/locations/us-central1/functions/uploadAudio","httpsTrigger":{"url":"https://us-central1-am-oficial.cloudfunctions.net/uploadAudio","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"uploadAudio","timeout":"300s","availableMemoryMb":1024,"serviceAccountEmail":"am-oficial@appspot.gserviceaccount.com","updateTime":"2023-10-24T18:40:55.894Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"30bf4b462266693732ff7ba19b2c1e299392a91f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-499418587366.us-central1.cloudfunctions.appspot.com/e2798585-0c4d-4270-a94f-a8be54b6222e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/functions/uploadAudio"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"b76bbf16-83fe-442e-8a1d-4ee50fc57517","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/790235731261/locations/us-central1/builds/b76bbf16-83fe-442e-8a1d-4ee50fc57517","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/am-oficial/locations/us-central1/functions/uploadImage","httpsTrigger":{"url":"https://us-central1-am-oficial.cloudfunctions.net/uploadImage","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"uploadImage","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"am-oficial@appspot.gserviceaccount.com","updateTime":"2023-10-24T18:40:53.124Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"30bf4b462266693732ff7ba19b2c1e299392a91f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-499418587366.us-central1.cloudfunctions.appspot.com/e2798585-0c4d-4270-a94f-a8be54b6222e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/functions/uploadImage"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"8e6e7236-033f-4c3a-9148-c38a74b137af","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/790235731261/locations/us-central1/builds/8e6e7236-033f-4c3a-9148-c38a74b137af","dockerRegistry":"ARTIFACT_REGISTRY"}]}
+[debug] [2023-10-25T15:25:11.272Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/am-oficial/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-10-25T15:25:12.115Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/am-oficial/locations/-/functions 200
+[debug] [2023-10-25T15:25:12.115Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/am-oficial/locations/-/functions {"functions":[{"name":"projects/am-oficial/locations/us-central1/functions/ssramoficial","buildConfig":{"build":"projects/790235731261/locations/us-central1/builds/985abeb5-0313-4b66-a346-23b9385f579a","runtime":"nodejs18","entryPoint":"ssramoficial","source":{"storageSource":{"bucket":"gcf-v2-sources-790235731261-us-central1","object":"ssramoficial/function-source.zip","generation":"1698175193318673"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-790235731261-us-central1","object":"ssramoficial/function-source.zip","generation":"1698175193318673"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/am-oficial/locations/us-central1/services/ssramoficial","timeoutSeconds":60,"environmentVariables":{"NEXT_PUBLIC_API_KEY_FIREBASE":"AIzaSyD7bpXo4rAf9tV6_GQAmPuZvYC3XUdMq5M","NEXT_PUBLIC_AUTH_DOMAIN":"loginfirebase-f3de6.firebaseapp.com","NEXT_PUBLIC_PROJECT_ID":"loginfirebase-f3de6","NEXT_PUBLIC_STORAGE_BUCKET":"loginfirebase-f3de6.appspot.com","NEXT_PUBLIC_MESSAGING_SENDER_ID":"686926225716","NEXT_PUBLIC_APP_ID":"1:686926225716:web:f232676743a51dae108561","NEXT_PUBLIC_MEASUREMENT_ID":"G-69GTN43X4T","REACT_APP_API":"http://127.0.0.1:5001/am-oficial/us-central1","NEXT_PUBLIC_API_BASE_URL":"http://127.0.0.1:5001/am-oficial/us-central1","__FIREBASE_FRAMEWORKS_ENTRY__":"next.js","__FIREBASE_DEFAULTS__":"{\"config\":{\"projectId\":\"am-oficial\",\"appId\":\"1:790235731261:web:9222ac458547a3891b2154\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\",\"apiKey\":\"AIzaSyAGbiy04HBgDIugFks51FGRJ3x0brlB5jI\",\"authDomain\":\"am-oficial.firebaseapp.com\",\"messagingSenderId\":\"790235731261\",\"measurementId\":\"G-HDNV1PT0M1\"},\"_authTokenSyncURL\":\"/__session\"}","FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/services/ssramoficial","FUNCTION_TARGET":"ssramoficial"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","uri":"https://ssramoficial-6uks7vvjea-uc.a.run.app","serviceAccountEmail":"790235731261-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"ssramoficial-00005-mij","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","updateTime":"2023-10-24T19:22:26.922403341Z","labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-am-oficial","firebase-functions-hash":"bc5dee6a6d33be9e208963e1b7eb1418c24ff6ac"},"environment":"GEN_2","url":"https://us-central1-am-oficial.cloudfunctions.net/ssramoficial"}]}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2023-10-25T15:25:12.119Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/run.googleapis.com [none]
+[debug] [2023-10-25T15:25:12.119Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/run.googleapis.com x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:25:12.120Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/eventarc.googleapis.com [none]
+[debug] [2023-10-25T15:25:12.120Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/eventarc.googleapis.com x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:25:12.121Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/pubsub.googleapis.com [none]
+[debug] [2023-10-25T15:25:12.122Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/pubsub.googleapis.com x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:25:12.123Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/storage.googleapis.com [none]
+[debug] [2023-10-25T15:25:12.123Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/storage.googleapis.com x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:25:12.694Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/run.googleapis.com 200
+[debug] [2023-10-25T15:25:12.694Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[debug] [2023-10-25T15:25:12.698Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/eventarc.googleapis.com 200
+[debug] [2023-10-25T15:25:12.698Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2023-10-25T15:25:12.739Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/pubsub.googleapis.com 200
+[debug] [2023-10-25T15:25:12.739Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2023-10-25T15:25:12.763Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/storage.googleapis.com 200
+[debug] [2023-10-25T15:25:12.764Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2023-10-25T15:25:12.765Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/790235731261/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-10-25T15:25:12.766Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/790235731261/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-10-25T15:25:13.638Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/790235731261/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2023-10-25T15:25:13.638Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/790235731261/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-790235731261@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"106130150298379590754"}}
+[debug] [2023-10-25T15:25:13.688Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/790235731261/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2023-10-25T15:25:13.688Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/790235731261/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-790235731261@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"113618422152025807074"}}
+[debug] [2023-10-25T15:25:13.690Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial [none]
+[debug] [2023-10-25T15:25:14.244Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial 200
+[debug] [2023-10-25T15:25:14.244Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial {"projectId":"am-oficial","projectNumber":"790235731261","displayName":"3am-oficial","name":"projects/am-oficial","resources":{"hostingSite":"am-oficial","storageBucket":"am-oficial.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_fd0d6857-c75b-43fa-b794-16e60493996b"}
+[debug] [2023-10-25T15:25:14.247Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/am-oficial/versions [none]
+[debug] [2023-10-25T15:25:14.247Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/am-oficial/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase","firebase-web-framework":"next_ssr"}}
+[debug] [2023-10-25T15:25:15.068Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/am-oficial/versions 200
+[debug] [2023-10-25T15:25:15.068Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/am-oficial/versions {"name":"projects/790235731261/sites/am-oficial/versions/ec0256b16403f776","status":"CREATED","config":{},"labels":{"firebase-web-framework":"next_ssr","deployment-tool":"cli-firebase"}}
+[debug] [2023-10-25T15:25:15.069Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/am-oficial/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-10-25T15:25:15.666Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/am-oficial/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-10-25T15:25:15.666Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/am-oficial/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-790235731261-us-central1/0111bcc4-5257-4d7b-a37a-df347520facc.zip?GoogleAccessId=service-790235731261@gcf-admin-robot.iam.gserviceaccount.com&Expires=1698249314&Signature=FIaIm%2FtpzGRKjWSHKwB1d%2BidY%2B4nxsoJ%2Bpy2tH%2FF8n69bexWkfd0OAnj3kd2LzuWBfRSSA4eRN7%2FRTeAbW%2B7HiwLN%2FhqwkBetzp1poSb%2FNUTkM3%2BItoWqwcma5YDkdm9Q3NrpGr9E9laxpWrDEC8lIgc136H6dR5aFIMpAyO90ePEfMPY8BpClKZyhoL%2FtnU%2BphTWA8F5n%2F8YGmoKdSq6n9Hb9dgbCw6Pw85XJT516qYDubCd5UmnJgCLbvXGDh0j9Njqsq%2B8GlTNXb1mDr4AcOrDKN8qf%2BA2oar7oipdLrebAOA4dibx3qeCJoD3VrDnRHRosrdPvy0DYbTFXZM4Q%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-790235731261-us-central1","object":"0111bcc4-5257-4d7b-a37a-df347520facc.zip"}}
+[debug] [2023-10-25T15:25:15.667Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-790235731261-us-central1/0111bcc4-5257-4d7b-a37a-df347520facc.zip GoogleAccessId=service-790235731261%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1698249314&Signature=FIaIm%2FtpzGRKjWSHKwB1d%2BidY%2B4nxsoJ%2Bpy2tH%2FF8n69bexWkfd0OAnj3kd2LzuWBfRSSA4eRN7%2FRTeAbW%2B7HiwLN%2FhqwkBetzp1poSb%2FNUTkM3%2BItoWqwcma5YDkdm9Q3NrpGr9E9laxpWrDEC8lIgc136H6dR5aFIMpAyO90ePEfMPY8BpClKZyhoL%2FtnU%2BphTWA8F5n%2F8YGmoKdSq6n9Hb9dgbCw6Pw85XJT516qYDubCd5UmnJgCLbvXGDh0j9Njqsq%2B8GlTNXb1mDr4AcOrDKN8qf%2BA2oar7oipdLrebAOA4dibx3qeCJoD3VrDnRHRosrdPvy0DYbTFXZM4Q%3D%3D
+[debug] [2023-10-25T15:25:15.667Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-790235731261-us-central1/0111bcc4-5257-4d7b-a37a-df347520facc.zip [stream]
+[debug] [2023-10-25T15:35:49.632Z] ----------------------------------------------------------------------
+[debug] [2023-10-25T15:35:49.634Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\japod\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-10-25T15:35:49.635Z] CLI Version:   12.7.0
+[debug] [2023-10-25T15:35:49.635Z] Platform:      win32
+[debug] [2023-10-25T15:35:49.635Z] Node Version:  v18.15.0
+[debug] [2023-10-25T15:35:49.636Z] Time:          Wed Oct 25 2023 11:35:49 GMT-0400 (hora de Venezuela)
+[debug] [2023-10-25T15:35:49.636Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-10-25T15:35:49.713Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-10-25T15:35:49.713Z] > authorizing via signed-in user (martinezcaceresjosem@gmail.com)
+[debug] [2023-10-25T15:35:49.713Z] [iam] checking project am-oficial for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-10-25T15:35:49.720Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions [none]
+[debug] [2023-10-25T15:35:49.720Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:35:49.721Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-25T15:35:50.485Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions 200
+[debug] [2023-10-25T15:35:50.485Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-10-25T15:35:50.486Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial [none]
+[debug] [2023-10-25T15:35:51.161Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial 200
+[debug] [2023-10-25T15:35:51.161Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial {"projectId":"am-oficial","projectNumber":"790235731261","displayName":"3am-oficial","name":"projects/am-oficial","resources":{"hostingSite":"am-oficial","storageBucket":"am-oficial.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_fd0d6857-c75b-43fa-b794-16e60493996b"}
+[debug] [2023-10-25T15:35:55.436Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/am-oficial/sites pageToken=&pageSize=10
+[debug] [2023-10-25T15:35:56.170Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/am-oficial/sites 200
+[debug] [2023-10-25T15:35:56.170Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/am-oficial/sites {"sites":[{"name":"projects/am-oficial/sites/am-oficial","defaultUrl":"https://am-oficial.web.app","appId":"1:790235731261:web:9222ac458547a3891b2154","type":"DEFAULT_SITE"}]}
+[debug] [2023-10-25T15:35:56.170Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:790235731261:web:9222ac458547a3891b2154/config [none]
+[debug] [2023-10-25T15:35:56.911Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:790235731261:web:9222ac458547a3891b2154/config 200
+[debug] [2023-10-25T15:35:56.912Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:790235731261:web:9222ac458547a3891b2154/config {"projectId":"am-oficial","appId":"1:790235731261:web:9222ac458547a3891b2154","storageBucket":"am-oficial.appspot.com","locationId":"us-central","apiKey":"AIzaSyAGbiy04HBgDIugFks51FGRJ3x0brlB5jI","authDomain":"am-oficial.firebaseapp.com","messagingSenderId":"790235731261","measurementId":"G-HDNV1PT0M1"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[info]    Linting and checking validity of types ...
+
+[info]    Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully
+
+[info]    Collecting page data ...
+
+[info]    Generating static pages (0/5) ...
+
+[info]    Generating static pages (1/5) 
+
+[info]    Generating static pages (2/5) 
+
+[info]    Generating static pages (3/5) 
+
+[info]  ✓ Generating static pages (5/5) 
+
+[info]    Finalizing page optimization ...
+   Collecting build traces ...
+
+[info] 
+
+[info] Route (pages)                              Size     First Load JS
+┌ ○ /                                      595 B           122 kB
+├   /_app                                  0 B             121 kB
+├ ○ /404                                   181 B           121 kB
+├ λ /admin                                 20 kB           298 kB
+├ ○ /admin/login (322 ms)                  773 B           279 kB
+├ λ /album/[albumId]                       872 B           279 kB
+├ λ /album/[albumId]/[code]                852 B           279 kB
+├ ○ /cart                                  250 B           121 kB
+├ λ /song/[SongId]                         873 B           279 kB
+└ λ /song/[SongId]/[code]                  609 B           122 kB
++ First Load JS shared by all              126 kB
+  ├ chunks/framework-0c7baedefba6b077.js   45.3 kB
+  ├ chunks/main-a82dbdedafde9961.js        32.8 kB
+  ├ chunks/pages/_app-add98f19b0a7a28e.js  42 kB
+  ├ chunks/webpack-06ce503ec71d61d0.js     848 B
+  └ css/e5a0f087ae296ea9.css               5.1 kB
+
+[info] 
+λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+
+
+[info] Building a Cloud Function to run this application. This is needed due to:
+[info]  • non-static route /album/[albumId]/[code]
+[info]  • non-static route /admin
+[info]  • non-static route /album/[albumId]
+[info]  • non-static route /song/[SongId]/[code]
+[info]  • non-static route /song/[SongId]
+[info] 
+[debug] [2023-10-25T15:36:39.860Z] [web frameworks] effective firebase.json:  {
+  "hosting": [
+    {
+      "source": ".",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "frameworksBackend": {
+        "region": "us-central1"
+      },
+      "site": "am-oficial",
+      "rewrites": [
+        {
+          "source": "**",
+          "function": {
+            "functionId": "ssramoficial",
+            "region": "us-central1",
+            "pinTag": true
+          }
+        }
+      ],
+      "redirects": [],
+      "headers": [
+        {
+          "source": "**/*.[jt]s",
+          "headers": [
+            {
+              "key": "Set-Cookie",
+              "value": "__FIREBASE_DEFAULTS__=eyJjb25maWciOnsicHJvamVjdElkIjoiYW0tb2ZpY2lhbCIsImFwcElkIjoiMTo3OTAyMzU3MzEyNjE6d2ViOjkyMjJhYzQ1ODU0N2EzODkxYjIxNTQiLCJzdG9yYWdlQnVja2V0IjoiYW0tb2ZpY2lhbC5hcHBzcG90LmNvbSIsImxvY2F0aW9uSWQiOiJ1cy1jZW50cmFsIiwiYXBpS2V5IjoiQUl6YVN5QUdiaXkwNEhCZ0RJdWdGa3M1MUZHUkozeDBicmxCNWpJIiwiYXV0aERvbWFpbiI6ImFtLW9maWNpYWwuZmlyZWJhc2VhcHAuY29tIiwibWVzc2FnaW5nU2VuZGVySWQiOiI3OTAyMzU3MzEyNjEiLCJtZWFzdXJlbWVudElkIjoiRy1IRE5WMVBUME0xIn0sIl9hdXRoVG9rZW5TeW5jVVJMIjoiL19fc2Vzc2lvbiJ9; SameSite=Strict; Expires=2025-09-19T02:16:39.860Z; Path=/;"
+            }
+          ]
+        }
+      ],
+      "cleanUrls": true,
+      "trailingSlash": false,
+      "public": ".firebase\\am-oficial\\hosting",
+      "webFramework": "next_ssr"
+    }
+  ],
+  "functions": [
+    {
+      "source": ".firebase\\am-oficial\\functions",
+      "codebase": "firebase-frameworks-am-oficial"
+    }
+  ]
+}
+[debug] [2023-10-25T15:36:39.860Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-10-25T15:36:39.860Z] > authorizing via signed-in user (martinezcaceresjosem@gmail.com)
+[debug] [2023-10-25T15:36:39.860Z] [iam] checking project am-oficial for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-10-25T15:36:39.861Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions [none]
+[debug] [2023-10-25T15:36:39.861Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:36:39.861Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-10-25T15:36:40.304Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions 200
+[debug] [2023-10-25T15:36:40.304Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[info] 
+[info] === Deploying to 'am-oficial'...
+[info] 
+[info] i  deploying functions, hosting 
+[debug] [2023-10-25T15:36:40.307Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial [none]
+[debug] [2023-10-25T15:36:40.770Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial 200
+[debug] [2023-10-25T15:36:40.771Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial {"projectId":"am-oficial","projectNumber":"790235731261","displayName":"3am-oficial","name":"projects/am-oficial","resources":{"hostingSite":"am-oficial","storageBucket":"am-oficial.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_fd0d6857-c75b-43fa-b794-16e60493996b"}
+[info] i  functions: preparing codebase firebase-frameworks-am-oficial for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-10-25T15:36:40.773Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-10-25T15:36:40.773Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:36:40.774Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-10-25T15:36:40.774Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:36:40.775Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/cloudbuild.googleapis.com [none]
+[debug] [2023-10-25T15:36:40.775Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/cloudbuild.googleapis.com x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:36:40.776Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/artifactregistry.googleapis.com [none]
+[debug] [2023-10-25T15:36:40.776Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/artifactregistry.googleapis.com x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:36:41.638Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/artifactregistry.googleapis.com 200
+[debug] [2023-10-25T15:36:41.638Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/artifactregistry.googleapis.com [omitted]
+[info] +  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-10-25T15:36:41.642Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/cloudbuild.googleapis.com 200
+[debug] [2023-10-25T15:36:41.643Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/cloudbuild.googleapis.com [omitted]
+[info] +  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-10-25T15:36:41.648Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/cloudfunctions.googleapis.com 200
+[debug] [2023-10-25T15:36:41.648Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/cloudfunctions.googleapis.com [omitted]
+[info] +  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-10-25T15:36:41.668Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/runtimeconfig.googleapis.com 200
+[debug] [2023-10-25T15:36:41.668Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-10-25T15:36:41.669Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial/adminSdkConfig [none]
+[debug] [2023-10-25T15:36:42.207Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial/adminSdkConfig 200
+[debug] [2023-10-25T15:36:42.208Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial/adminSdkConfig {"projectId":"am-oficial","storageBucket":"am-oficial.appspot.com","locationId":"us-central"}
+[debug] [2023-10-25T15:36:42.208Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/am-oficial/configs [none]
+[debug] [2023-10-25T15:36:43.061Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/am-oficial/configs 200
+[debug] [2023-10-25T15:36:43.061Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/am-oficial/configs {}
+[debug] [2023-10-25T15:36:43.062Z] Validating nodejs source
+[debug] [2023-10-25T15:36:44.824Z] > [functions] package.json contents: {
+  "name": "3am-official",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^1.5.1",
+    "firebase": "^10.5.0",
+    "lottie-react": "^2.4.0",
+    "next": "13.5.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-select": "^5.7.7",
+    "react-toastify": "^9.1.3",
+    "firebase-frameworks": "^0.10.4",
+    "firebase-functions": "^4.3.0",
+    "firebase-admin": "^11.0.1"
+  },
+  "main": "server.js",
+  "engines": {
+    "node": "18"
+  }
+}
+[debug] [2023-10-25T15:36:44.824Z] Building nodejs source
+[info] i  functions: Loading and analyzing source code for codebase firebase-frameworks-am-oficial to determine what to deploy 
+[debug] [2023-10-25T15:36:44.825Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-10-25T15:36:44.832Z] Found firebase-functions binary at 'C:\Users\japod\Documents\JoseMartinez\3amofficial\3am-official\.firebase\am-oficial\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8779
+
+[debug] [2023-10-25T15:36:45.289Z] Got response from /__/functions.yaml {"endpoints":{"ssramoficial":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","region":["us-central1"],"labels":{},"httpsTrigger":{},"entryPoint":"ssramoficial"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[info] shutdown requested via /__/quitquitquit
+
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing .firebase\am-oficial\functions directory for uploading... 
+[info] i  functions: packaged C:\Users\japod\Documents\JoseMartinez\3amofficial\3am-official\.firebase\am-oficial\functions (76.47 MB) for uploading 
+[debug] [2023-10-25T15:36:48.811Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/am-oficial/locations/-/functions [none]
+[debug] [2023-10-25T15:36:49.574Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/am-oficial/locations/-/functions 200
+[debug] [2023-10-25T15:36:49.574Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/am-oficial/locations/-/functions {"functions":[{"name":"projects/am-oficial/locations/us-central1/functions/createAlbum","httpsTrigger":{"url":"https://us-central1-am-oficial.cloudfunctions.net/createAlbum","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"createAlbum","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"am-oficial@appspot.gserviceaccount.com","updateTime":"2023-10-24T18:40:54.797Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"30bf4b462266693732ff7ba19b2c1e299392a91f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-499418587366.us-central1.cloudfunctions.appspot.com/e2798585-0c4d-4270-a94f-a8be54b6222e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/functions/createAlbum"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"8e6e7236-033f-4c3a-9148-c38a74b137af","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/790235731261/locations/us-central1/builds/8e6e7236-033f-4c3a-9148-c38a74b137af","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/am-oficial/locations/us-central1/functions/createSong","httpsTrigger":{"url":"https://us-central1-am-oficial.cloudfunctions.net/createSong","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"createSong","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"am-oficial@appspot.gserviceaccount.com","updateTime":"2023-10-24T18:40:53.108Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"30bf4b462266693732ff7ba19b2c1e299392a91f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-499418587366.us-central1.cloudfunctions.appspot.com/e2798585-0c4d-4270-a94f-a8be54b6222e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/functions/createSong"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"8e6e7236-033f-4c3a-9148-c38a74b137af","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/790235731261/locations/us-central1/builds/8e6e7236-033f-4c3a-9148-c38a74b137af","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/am-oficial/locations/us-central1/functions/getAlbums","httpsTrigger":{"url":"https://us-central1-am-oficial.cloudfunctions.net/getAlbums","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"getAlbums","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"am-oficial@appspot.gserviceaccount.com","updateTime":"2023-10-24T18:40:53.132Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"30bf4b462266693732ff7ba19b2c1e299392a91f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-499418587366.us-central1.cloudfunctions.appspot.com/e2798585-0c4d-4270-a94f-a8be54b6222e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/functions/getAlbums"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"8e6e7236-033f-4c3a-9148-c38a74b137af","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/790235731261/locations/us-central1/builds/8e6e7236-033f-4c3a-9148-c38a74b137af","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/am-oficial/locations/us-central1/functions/getSongById","httpsTrigger":{"url":"https://us-central1-am-oficial.cloudfunctions.net/getSongById","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"getSongById","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"am-oficial@appspot.gserviceaccount.com","updateTime":"2023-10-24T18:40:52.987Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"30bf4b462266693732ff7ba19b2c1e299392a91f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-499418587366.us-central1.cloudfunctions.appspot.com/e2798585-0c4d-4270-a94f-a8be54b6222e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/functions/getSongById"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"8e6e7236-033f-4c3a-9148-c38a74b137af","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/790235731261/locations/us-central1/builds/8e6e7236-033f-4c3a-9148-c38a74b137af","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/am-oficial/locations/us-central1/functions/getSongsByAlbumId","httpsTrigger":{"url":"https://us-central1-am-oficial.cloudfunctions.net/getSongsByAlbumId","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"getSongsByAlbumId","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"am-oficial@appspot.gserviceaccount.com","updateTime":"2023-10-24T18:40:53.551Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"30bf4b462266693732ff7ba19b2c1e299392a91f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-499418587366.us-central1.cloudfunctions.appspot.com/e2798585-0c4d-4270-a94f-a8be54b6222e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/functions/getSongsByAlbumId"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"8e6e7236-033f-4c3a-9148-c38a74b137af","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/790235731261/locations/us-central1/builds/8e6e7236-033f-4c3a-9148-c38a74b137af","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/am-oficial/locations/us-central1/functions/registerUser","httpsTrigger":{"url":"https://us-central1-am-oficial.cloudfunctions.net/registerUser","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"registerUser","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"am-oficial@appspot.gserviceaccount.com","updateTime":"2023-10-24T18:40:54.064Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"30bf4b462266693732ff7ba19b2c1e299392a91f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-499418587366.us-central1.cloudfunctions.appspot.com/e2798585-0c4d-4270-a94f-a8be54b6222e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/functions/registerUser"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"8e6e7236-033f-4c3a-9148-c38a74b137af","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/790235731261/locations/us-central1/builds/8e6e7236-033f-4c3a-9148-c38a74b137af","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/am-oficial/locations/us-central1/functions/uploadAudio","httpsTrigger":{"url":"https://us-central1-am-oficial.cloudfunctions.net/uploadAudio","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"uploadAudio","timeout":"300s","availableMemoryMb":1024,"serviceAccountEmail":"am-oficial@appspot.gserviceaccount.com","updateTime":"2023-10-24T18:40:55.894Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"30bf4b462266693732ff7ba19b2c1e299392a91f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-499418587366.us-central1.cloudfunctions.appspot.com/e2798585-0c4d-4270-a94f-a8be54b6222e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/functions/uploadAudio"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"b76bbf16-83fe-442e-8a1d-4ee50fc57517","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/790235731261/locations/us-central1/builds/b76bbf16-83fe-442e-8a1d-4ee50fc57517","dockerRegistry":"ARTIFACT_REGISTRY"},{"name":"projects/am-oficial/locations/us-central1/functions/uploadImage","httpsTrigger":{"url":"https://us-central1-am-oficial.cloudfunctions.net/uploadImage","securityLevel":"SECURE_ALWAYS"},"status":"ACTIVE","entryPoint":"uploadImage","timeout":"60s","availableMemoryMb":256,"serviceAccountEmail":"am-oficial@appspot.gserviceaccount.com","updateTime":"2023-10-24T18:40:53.124Z","versionId":"1","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"30bf4b462266693732ff7ba19b2c1e299392a91f"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-499418587366.us-central1.cloudfunctions.appspot.com/e2798585-0c4d-4270-a94f-a8be54b6222e.zip","environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/functions/uploadImage"},"runtime":"nodejs18","ingressSettings":"ALLOW_ALL","buildId":"8e6e7236-033f-4c3a-9148-c38a74b137af","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"buildName":"projects/790235731261/locations/us-central1/builds/8e6e7236-033f-4c3a-9148-c38a74b137af","dockerRegistry":"ARTIFACT_REGISTRY"}]}
+[debug] [2023-10-25T15:36:49.575Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/am-oficial/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-10-25T15:36:50.312Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/am-oficial/locations/-/functions 200
+[debug] [2023-10-25T15:36:50.312Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/am-oficial/locations/-/functions {"functions":[{"name":"projects/am-oficial/locations/us-central1/functions/ssramoficial","buildConfig":{"build":"projects/790235731261/locations/us-central1/builds/985abeb5-0313-4b66-a346-23b9385f579a","runtime":"nodejs18","entryPoint":"ssramoficial","source":{"storageSource":{"bucket":"gcf-v2-sources-790235731261-us-central1","object":"ssramoficial/function-source.zip","generation":"1698175193318673"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-790235731261-us-central1","object":"ssramoficial/function-source.zip","generation":"1698175193318673"}},"dockerRegistry":"ARTIFACT_REGISTRY"},"serviceConfig":{"service":"projects/am-oficial/locations/us-central1/services/ssramoficial","timeoutSeconds":60,"environmentVariables":{"NEXT_PUBLIC_API_KEY_FIREBASE":"AIzaSyD7bpXo4rAf9tV6_GQAmPuZvYC3XUdMq5M","NEXT_PUBLIC_AUTH_DOMAIN":"loginfirebase-f3de6.firebaseapp.com","NEXT_PUBLIC_PROJECT_ID":"loginfirebase-f3de6","NEXT_PUBLIC_STORAGE_BUCKET":"loginfirebase-f3de6.appspot.com","NEXT_PUBLIC_MESSAGING_SENDER_ID":"686926225716","NEXT_PUBLIC_APP_ID":"1:686926225716:web:f232676743a51dae108561","NEXT_PUBLIC_MEASUREMENT_ID":"G-69GTN43X4T","REACT_APP_API":"http://127.0.0.1:5001/am-oficial/us-central1","NEXT_PUBLIC_API_BASE_URL":"http://127.0.0.1:5001/am-oficial/us-central1","__FIREBASE_FRAMEWORKS_ENTRY__":"next.js","__FIREBASE_DEFAULTS__":"{\"config\":{\"projectId\":\"am-oficial\",\"appId\":\"1:790235731261:web:9222ac458547a3891b2154\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\",\"apiKey\":\"AIzaSyAGbiy04HBgDIugFks51FGRJ3x0brlB5jI\",\"authDomain\":\"am-oficial.firebaseapp.com\",\"messagingSenderId\":\"790235731261\",\"measurementId\":\"G-HDNV1PT0M1\"},\"_authTokenSyncURL\":\"/__session\"}","FIREBASE_CONFIG":"{\"projectId\":\"am-oficial\",\"storageBucket\":\"am-oficial.appspot.com\",\"locationId\":\"us-central\"}","GCLOUD_PROJECT":"am-oficial","EVENTARC_CLOUD_EVENT_SOURCE":"projects/am-oficial/locations/us-central1/services/ssramoficial","FUNCTION_TARGET":"ssramoficial"},"maxInstanceCount":100,"ingressSettings":"ALLOW_ALL","uri":"https://ssramoficial-6uks7vvjea-uc.a.run.app","serviceAccountEmail":"790235731261-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"ssramoficial-00005-mij","maxInstanceRequestConcurrency":80,"availableCpu":"1"},"state":"ACTIVE","updateTime":"2023-10-24T19:22:26.922403341Z","labels":{"deployment-tool":"cli-firebase","firebase-functions-codebase":"firebase-frameworks-am-oficial","firebase-functions-hash":"bc5dee6a6d33be9e208963e1b7eb1418c24ff6ac"},"environment":"GEN_2","url":"https://us-central1-am-oficial.cloudfunctions.net/ssramoficial"}]}
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[debug] [2023-10-25T15:36:50.315Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/run.googleapis.com [none]
+[debug] [2023-10-25T15:36:50.315Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/run.googleapis.com x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:36:50.317Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/eventarc.googleapis.com [none]
+[debug] [2023-10-25T15:36:50.317Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/eventarc.googleapis.com x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:36:50.318Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/pubsub.googleapis.com [none]
+[debug] [2023-10-25T15:36:50.318Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/pubsub.googleapis.com x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:36:50.319Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/storage.googleapis.com [none]
+[debug] [2023-10-25T15:36:50.319Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/storage.googleapis.com x-goog-quota-user=projects/am-oficial
+[debug] [2023-10-25T15:36:50.885Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/run.googleapis.com 200
+[debug] [2023-10-25T15:36:50.885Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/run.googleapis.com [omitted]
+[info] +  functions: required API run.googleapis.com is enabled 
+[debug] [2023-10-25T15:36:50.889Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/eventarc.googleapis.com 200
+[debug] [2023-10-25T15:36:50.889Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/eventarc.googleapis.com [omitted]
+[info] +  functions: required API eventarc.googleapis.com is enabled 
+[debug] [2023-10-25T15:36:50.894Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/pubsub.googleapis.com 200
+[debug] [2023-10-25T15:36:50.894Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/pubsub.googleapis.com [omitted]
+[info] +  functions: required API pubsub.googleapis.com is enabled 
+[debug] [2023-10-25T15:36:50.928Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/storage.googleapis.com 200
+[debug] [2023-10-25T15:36:50.928Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/am-oficial/services/storage.googleapis.com [omitted]
+[info] +  functions: required API storage.googleapis.com is enabled 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2023-10-25T15:36:50.929Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/790235731261/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-10-25T15:36:50.931Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/790235731261/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2023-10-25T15:36:51.763Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/790235731261/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2023-10-25T15:36:51.763Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/790235731261/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-790235731261@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"106130150298379590754"}}
+[debug] [2023-10-25T15:36:51.818Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/790235731261/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2023-10-25T15:36:51.818Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/790235731261/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-790235731261@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"113618422152025807074"}}
+[debug] [2023-10-25T15:36:51.820Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial [none]
+[debug] [2023-10-25T15:36:52.340Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial 200
+[debug] [2023-10-25T15:36:52.340Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial {"projectId":"am-oficial","projectNumber":"790235731261","displayName":"3am-oficial","name":"projects/am-oficial","resources":{"hostingSite":"am-oficial","storageBucket":"am-oficial.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_fd0d6857-c75b-43fa-b794-16e60493996b"}
+[debug] [2023-10-25T15:36:52.343Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/am-oficial/versions [none]
+[debug] [2023-10-25T15:36:52.343Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/am-oficial/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase","firebase-web-framework":"next_ssr"}}
+[debug] [2023-10-25T15:36:53.135Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/am-oficial/versions 200
+[debug] [2023-10-25T15:36:53.136Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/am-oficial/versions {"name":"projects/790235731261/sites/am-oficial/versions/037ff0c5a23e5314","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase","firebase-web-framework":"next_ssr"}}
+[debug] [2023-10-25T15:36:53.136Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v2/projects/am-oficial/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-10-25T15:36:53.730Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v2/projects/am-oficial/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-10-25T15:36:53.730Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v2/projects/am-oficial/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/gcf-v2-uploads-790235731261-us-central1/dc71dc74-14a1-41eb-8099-7d85af875e56.zip?GoogleAccessId=service-790235731261@gcf-admin-robot.iam.gserviceaccount.com&Expires=1698250012&Signature=Z262ZpwReTd6ExBNWi6obKqZGdOPUy7hTZRotrPByZMZZ6r5wYnyWc%2BH0FTVp7dgi0TJ6gOkUwZQ2ewe16NA3CKW3Rg7v4jIfcVmzPl1LdUwi2bTUDLyTwdbxCEIQxyLB0%2FuoDtsz68XYK5k0%2FWYsmeHRZI442AgHb4b2I7UTXrU3nCIIJX5WTPBOEXuDlFgmssacsm7mo%2BkPQ6fbBoBMKLSRW%2BMY0h9r3u8nKgSJBiX5suxDQlk2sNmkWBDxrExPAX9bGRBucG3e3Mwkl%2F3a3no1T05X7J8h2FOpOuAw6tzu5nyhYZaMX9Od%2BHlNSHCnw3lK4oQOoA7287wxhaCRg%3D%3D","storageSource":{"bucket":"gcf-v2-uploads-790235731261-us-central1","object":"dc71dc74-14a1-41eb-8099-7d85af875e56.zip"}}
+[debug] [2023-10-25T15:36:53.731Z] >>> [apiv2][query] PUT https://storage.googleapis.com/gcf-v2-uploads-790235731261-us-central1/dc71dc74-14a1-41eb-8099-7d85af875e56.zip GoogleAccessId=service-790235731261%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1698250012&Signature=Z262ZpwReTd6ExBNWi6obKqZGdOPUy7hTZRotrPByZMZZ6r5wYnyWc%2BH0FTVp7dgi0TJ6gOkUwZQ2ewe16NA3CKW3Rg7v4jIfcVmzPl1LdUwi2bTUDLyTwdbxCEIQxyLB0%2FuoDtsz68XYK5k0%2FWYsmeHRZI442AgHb4b2I7UTXrU3nCIIJX5WTPBOEXuDlFgmssacsm7mo%2BkPQ6fbBoBMKLSRW%2BMY0h9r3u8nKgSJBiX5suxDQlk2sNmkWBDxrExPAX9bGRBucG3e3Mwkl%2F3a3no1T05X7J8h2FOpOuAw6tzu5nyhYZaMX9Od%2BHlNSHCnw3lK4oQOoA7287wxhaCRg%3D%3D
+[debug] [2023-10-25T15:36:53.731Z] >>> [apiv2][body] PUT https://storage.googleapis.com/gcf-v2-uploads-790235731261-us-central1/dc71dc74-14a1-41eb-8099-7d85af875e56.zip [stream]
