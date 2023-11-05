@@ -9,3 +9,5 @@ export { default as AlbumList } from "./AlbumList/AlbumList";
 export { default as InputFileAudio } from "./InputFileAudio/InputFileAudio";
 export { default as EnterCode } from "./EnterCode/EnterCode";
 export { default as Select } from "./Select/Select";
+export { default as Deploy } from "./Deploy/Deploy";
+export { default as SocialMedia } from "./SocialMedia/SocialMedia";

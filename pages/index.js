@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="w-full flex flex-col items-center justify-center h-full">
       <video
-        src="/assets/video/gift1.mp4"
+        src="/assets/video/gift.mp4"
         autoPlay
         muted
         loop
@@ -19,7 +19,7 @@ export default function Home() {
       <img
         src="/assets/images/photo1.jpg"
         alt=""
-        className="w-full h-full m-5"
+        className="w-screen h-full m-5"
       />
       <img
         src="/assets/images/photo2.jpg"

@@ -24,10 +24,10 @@ const OnlySong = ({ SongId }) => {
   };
 
   return (
-    <div className="lg:h-auto h-screen flex justify-center items-center">
-      <div className="container-album p-5 md:py-20 max-w-[900px] mx-auto">
+    <div className="lg:h-auto h-full flex mt-[40px] justify-center items-center">
+      <div className="container-album p-5 md:py-20 max-w-[900px] sm:h-auto h-screen mx-auto">
         <div className="max-w-screen-xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold mb-4">
+          <h2 className="text-3xl font-semibold mb-4 py-3">
             Ingrese su Código Exclusivo
           </h2>
           <p className="mb-8">
@@ -46,14 +46,14 @@ const OnlySong = ({ SongId }) => {
             <div className="md:w-1/2 p-4 flex flex-col justify-center items-center">
               <div className="w-full md:w-3/4">
                 <Inputs
-                  label="Codigo VIP"
+                  label="Codigo"
                   placeholder="Ingrese el código"
                   value={code}
                   onChange={handlerInputChange}
                 />
                 {errorParam && (
                   <span className="text-red-600 pt-1 flex">
-                    Código VIP Inválido
+                    Código Inválido
                   </span>
                 )}
               </div>
