@@ -50,7 +50,7 @@ const login = () => {
   };
 
   return (
-    <div className="space-y-10 flex flex-col justify-center items-center not-complete-h-screen">
+    <div className="space-y-10 flex flex-col justify-center items-center not-complete h-screen">
       <div className="container-album w-full max-w-[550px] p-20 sm:h-auto h-screen">
         <div className="w-full max-w-[400px] mx-auto sm:px-0 px-4  space-y-10 ">
           <Inputs

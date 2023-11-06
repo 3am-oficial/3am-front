@@ -25,7 +25,7 @@ const albumCode = ({ albumId }) => {
   };
 
   return (
-    <div className="lg:h-auto h-screen mt-[40px] justify-center items-center flex">
+    <div className="lg:h-auto h-screen justify-center items-center flex">
       <div className="container-album p-5 md:py-20 max-w-[900px] mx-auto sm:h-auto h-screen">
         <div className="max-w-screen-xl mx-auto text-center">
           <h2 className="text-3xl font-semibold mb-4">

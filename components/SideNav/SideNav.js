@@ -31,17 +31,18 @@ function SideNav() {
 
   return (
     <div className="bg-black">
-      <header>
-        <h1 className="text-center text-white border-b border-b-stone-600">
-          3AM Official
-        </h1>
-        <div className="flex justify-between px-16">
-          <img
-            src={open ? "/assets/icons/close.svg" : "/assets/icons/burguer.svg"}
-            alt="burguer-icon"
-            className="cursor-pointer"
-            onClick={() => openMenu(!open)}
-          />
+      <header className="fixed z-10 bg-black w-full">
+        <div className="flex justify-between items-center px-16">
+          <div className="transform hover:bg-gray-200 rounded-full p-1.5">
+            <img
+              src={
+                open ? "/assets/icons/close.svg" : "/assets/icons/burguer.svg"
+              }
+              alt="burguer-icon"
+              className="cursor-pointer"
+              onClick={() => openMenu(!open)}
+            />
+          </div>
           <a href="/">
             <img
               src="/assets/images/logo.webp"
@@ -52,33 +53,35 @@ function SideNav() {
         </div>
       </header>
       {open && (
-        <div className="flex z-10 w-1/2 lg:w-1/4 h-screen fixed bg-black  flex-col space-y-5">
-          <ul className="space-y-5 slideInDown p-5 ">
+        <div className="flex z-10 w-full sm:w-1/4 h-screen fixed bg-black flex-col space-y-5 mt-[45px] lg:mt-[90px]">
+          <ul className="space-y-5 flex-1 pt-5">
             <li
-              className="hover:underline cursor-pointer"
+              className="hover:bg-gray-200 hover:text-black font-medium pl-12 text-lg cursor-pointer px-5 py-3"
               onClick={() => nextPage("/")}
             >
               Inicio
             </li>
             <li
-              className="hover:underline cursor-pointer"
+              className="hover:bg-gray-200 hover:text-black font-medium pl-12 text-lg cursor-pointer px-5 py-3"
               onClick={() => nextPage("/aboutUs")}
             >
               Sobre nosotros
             </li>
             <li
-              className="hover:underline cursor-pointer"
+              className="hover:bg-gray-200 hover:text-black font-medium pl-12 text-lg cursor-pointer px-5 py-3"
               onClick={() => nextPage("/events")}
             >
               Eventos
             </li>
           </ul>
-          <img
-            src="/assets/images/logo.webp"
-            width="250px"
-            className="pl-5 rounded-lg"
-          />
-          <div className="pl-3">
+          <div className="flex-1">
+            <img
+              src="/assets/images/logo.webp"
+              width="250px"
+              className="rounded-lg mx-auto"
+            />
+          </div>
+          <div className="mx-auto mt-auto flex-1">
             <SocialMedia />
           </div>
         </div>
