@@ -11,3 +11,4 @@ export { default as EnterCode } from "./EnterCode/EnterCode";
 export { default as Select } from "./Select/Select";
 export { default as Deploy } from "./Deploy/Deploy";
 export { default as SocialMedia } from "./SocialMedia/SocialMedia";
+export { default as Sections } from "./Sections/Sections";
