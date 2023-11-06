@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Deploy = ({ targetDate }) => {
+const Deploy = ({ targetDate, setDeploy }) => {
   //   const targetDate = new Date("2023-12-01T00:00:00").getTime();
   // const targetDate = new Date("2023-11-03T00:00:00").getTime();
   //   const [targetDate, setTargetDate] = useState(
@@ -20,6 +20,7 @@ const Deploy = ({ targetDate }) => {
       const timeDifference = targetDate - currentTime;
 
       if (timeDifference <= 0) {
+        setDeploy(true);
         setTimeRemaining({
           days: 0,
           hours: 0,
@@ -51,8 +52,8 @@ const Deploy = ({ targetDate }) => {
     return () => clearInterval(timerInterval);
   }, []);
   return (
-    <div className="bg-black h-screen flex justify-center items-center">
-      LANZAMIENTO: {timeRemaining.days} días, {timeRemaining.hours} horas,{" "}
+    <div className="bg-black h-screen flex justify-center items-center clock-time text-center">
+      {timeRemaining.days} días, {timeRemaining.hours} horas,{" "}
       {timeRemaining.minutes} minutos, {timeRemaining.seconds} segundos
     </div>
   );

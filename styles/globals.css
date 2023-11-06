@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -269,4 +270,10 @@ footer {
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
+}
+
+.clock-time {
+  font-size: 70px;
+  transition-property: opacity, transform;
+  font-family: "Black_Ops_One variant0", Tofu;
 }
