@@ -8,8 +8,8 @@ import "react-toastify/dist/ReactToastify.css";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
-  const targetDate = new Date("2023-12-01T00:00:00").getTime();
-  // const targetDate = new Date("2023-11-06T12:39:00").getTime();
+  // const targetDate = new Date("2023-12-01T00:00:00").getTime();
+  const targetDate = new Date("2023-11-06T12:39:00").getTime();
   const [deploy, setDeploy] = useState(targetDate - new Date().getTime() < 0);
   const router = useRouter();
 
@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }) {
         <title>3AM Official</title>
       </Head>
 
-      {deploy && !router.asPath === "/" ? (
+      {deploy ? (
         <>
           <SideNav />
           <Component {...pageProps} />

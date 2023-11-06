@@ -40,9 +40,6 @@ footer {
   height: calc(100vh - 190px);
 }
 
-.h-screen-admin {
-  height: calc(100vh - 230px);
-}
 
 .input-component {
   border: 1px solid white;

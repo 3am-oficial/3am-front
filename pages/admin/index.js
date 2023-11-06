@@ -97,20 +97,20 @@ const Admin = ({ Albums, loadingServer }) => {
 
   return (
     user && (
-      <div className="space-y-5 h-screen-admin">
+      <div className="space-y-5 h-auto p-5">
         <SideNavAdmin
           onTabSelect={(selectedTab) => setTab(selectedTab)}
           tab={tab}
         />
-        <div className="space-y-10 container-album p-10">
+        <div className="space-y-5 container-album p-10">
           {tab === 0 && !loadingServer && (
-            <div>
+            <div className="h-screen">
               <h2 className="mb-5 title-action ">Lista de Albunes</h2>
               <AlbumList albumList={Albums} selectAlbum={handleAlbumSelect} />
             </div>
           )}
           {tab === 1 && (
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center space-y-5">
               <div className="title-action w-full text-center">Crear Album</div>
               <div className="lg:w-1/2 w-full space-y-10">
                 <Inputs
@@ -148,7 +148,7 @@ const Admin = ({ Albums, loadingServer }) => {
             </div>
           )}
           {tab === 2 && (
-            <div className="space-y-20 flex flex-col items-center">
+            <div className="space-y-9 flex flex-col items-center">
               <div className="title-action w-full text-center">
                 Crear Cancion
               </div>
