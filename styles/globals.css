@@ -31,8 +31,16 @@ footer {
   width: 100%;
 }
 
-.min-h-screen-nav{
+.min-h-screen-nav {
   min-height: calc(100vh - 90px);
+}
+
+.not-complete-h-screen {
+  height: calc(100vh - 190px);
+}
+
+.h-screen-admin {
+  height: calc(100vh - 230px);
 }
 
 .input-component {
@@ -200,7 +208,7 @@ footer {
 
 @media (min-width: 1024px) {
   .sidebar-admin {
-    margin: 80px 80px 0px 80px;
+    margin: 40px 80px 0px 80px;
   }
 
   .container-album {
