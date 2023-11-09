@@ -6,7 +6,7 @@ const Events = () => {
     toast.warn("No disponible");
   };
   return (
-    <div className="bg-black">
+    <div className="bg-black pt-[90px]">
       <Sections
         img={"/assets/images/photo1.jpg"}
         event

@@ -5,52 +5,57 @@ import { handleShareClick } from "@/utils/sharedLink";
 
 function SongsPage({ Album, loadingServer }) {
   return (
-    <div className="container-album p-5 h-screen space-y-5">
-      <Head>
-        <title>
-          {Album.name} - {Album.artist}
-        </title>
-        <meta
-          name="description"
-          content={`Escucha las canciones de ${Album.name} de ${Album.artist}.`}
-        />
-        <meta property="og:title" content={`${Album.name} - ${Album.artist}`} />
-        <meta
-          property="og:description"
-          content={`Escucha las canciones de ${Album.name} de ${Album.artist}.`}
-        />
-        <meta property="og:image" content="/assets/images/imageUnknow.jpg" />
-        <meta name="twitter:card" content="summary" />
-      </Head>
-      <a href="/admin" className="go-back">
-        <div className="flex space-x-2">
-          <img src="/assets/icons/backarrow.svg" alt="imageArrow" />
-          <p>Regresar</p>
-        </div>
-      </a>
-      <div className="flex space-x-5 justify-between w-full items-center">
-        <div className="flex space-x-5 ">
-          <img
-            src={Album.image ? Album.image : "/assets/images/imageUnknow.jpg"}
-            alt={`${Album.name} - ${Album.artist}`}
-            className="rounded-lg w-16 h-16 md:w-20 md:h-20 lg:w-48 lg:h-48"
+    <div className="space-y-5 min-height-screen p-5 pt-[90px]">
+      <div className="container-album p-10 h-full space-y-5">
+        <Head>
+          <title>
+            {Album.name} - {Album.artist}
+          </title>
+          <meta
+            name="description"
+            content={`Escucha las canciones de ${Album.name} de ${Album.artist}.`}
           />
-          <div className="flex flex-col justify-between">
-            <h2 className="title-action">{Album.name}</h2>
-            <div className="flex space-x-5">
-              <strong>{Album.artist}</strong>
-              <p>{Album.songs.length} • canciones</p>
+          <meta
+            property="og:title"
+            content={`${Album.name} - ${Album.artist}`}
+          />
+          <meta
+            property="og:description"
+            content={`Escucha las canciones de ${Album.name} de ${Album.artist}.`}
+          />
+          <meta property="og:image" content="/assets/images/imageUnknow.jpg" />
+          <meta name="twitter:card" content="summary" />
+        </Head>
+        <a href="/admin" className="go-back">
+          <div className="flex space-x-2">
+            <img src="/assets/icons/backarrow.svg" alt="imageArrow" />
+            <p>Regresar</p>
+          </div>
+        </a>
+        <div className="flex space-x-5 justify-between w-full items-center">
+          <div className="flex space-x-5 ">
+            <img
+              src={Album.image ? Album.image : "/assets/images/imageUnknow.jpg"}
+              alt={`${Album.name} - ${Album.artist}`}
+              className="rounded-lg w-16 h-16 md:w-20 md:h-20 lg:w-48 lg:h-48"
+            />
+            <div className="flex flex-col justify-between">
+              <h2 className="title-action">{Album.name}</h2>
+              <div className="flex space-x-5">
+                <strong>{Album.artist}</strong>
+                <p>{Album.songs.length} • canciones</p>
+              </div>
             </div>
           </div>
+          <img
+            src="/assets/icons/shared.svg"
+            className="shared-icon w-12 cursor-pointer"
+            onClick={() => handleShareClick(Album, "album")}
+          />
         </div>
-        <img
-          src="/assets/icons/shared.svg"
-          className="shared-icon w-12 cursor-pointer"
-          onClick={() => handleShareClick(Album, "album")}
-        />
+        <hr />
+        {!loadingServer && <SongList songs={Album.songs} />}
       </div>
-      <hr />
-      {!loadingServer && <SongList songs={Album.songs} />}
     </div>
   );
 }

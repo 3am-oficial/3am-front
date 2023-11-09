@@ -50,7 +50,7 @@ const Admin = ({ Albums, loadingServer }) => {
   };
   const createSong = () => {
     const { nameSong, albumId, urlSong, songCodeSong } = state;
-
+    console.log({ nameSong, albumId, urlSong, songCodeSong });
     if (!nameSong || !albumId || !urlSong || !songCodeSong) {
       toast.warn("Existen campos vacios");
       return;
@@ -72,6 +72,21 @@ const Admin = ({ Albums, loadingServer }) => {
       });
   };
 
+  const cleanForm = () => {
+    setState((prevState) => ({
+      ...prevState,
+      albumName: "",
+      artistName: "3AM",
+      songCodeAlbum: "",
+      songCodeSong: "",
+      audioSong: null,
+      nameSong: "",
+      urlSong: "",
+      urlImage: "",
+      albumId: "",
+    }));
+  };
+
   const createAlbum = () => {
     const { albumName, artistName, urlImage, songCodeAlbum } = state;
 
@@ -89,6 +104,7 @@ const Admin = ({ Albums, loadingServer }) => {
     AxiosClient.post("/createAlbum", body)
       .then(() => {
         toast.success("Album Creado con Exito");
+        cleanForm();
       })
       .catch(() => {
         toast.success("Error inesperado");
@@ -97,14 +113,14 @@ const Admin = ({ Albums, loadingServer }) => {
 
   return (
     user && (
-      <div className="space-y-5 h-auto p-5">
+      <div className="space-y-5 min-height-screen p-5 pt-[90px]">
         <SideNavAdmin
           onTabSelect={(selectedTab) => setTab(selectedTab)}
           tab={tab}
         />
         <div className="space-y-5 container-album p-10">
           {tab === 0 && !loadingServer && (
-            <div className="h-screen">
+            <div className="">
               <h2 className="mb-5 title-action ">Lista de Albunes</h2>
               <AlbumList albumList={Albums} selectAlbum={handleAlbumSelect} />
             </div>

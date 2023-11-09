@@ -2,7 +2,7 @@ import { Sections } from "@/components";
 
 const AboutUs = () => {
   return (
-    <div className="bg-black">
+    <div className="bg-black pt-[90px]">
       <Sections
         img={"/assets/images/photo1.jpg"}
         text="Lorem ipsum dolor sit amet consectetur adipiscing elit mi, massa aenean
