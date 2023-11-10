@@ -24,7 +24,7 @@ const OnlySong = ({ SongId }) => {
   };
 
   return (
-    <div className="lg:h-auto h-full flex justify-center items-center">
+    <div className="lg:h-auto min-height-screen flex justify-center pt-[15px] items-center">
       <div className="container-album p-5 md:py-20 max-w-[900px] sm:h-auto h-screen mx-auto">
         <div className="max-w-screen-xl mx-auto text-center">
           <h2 className="text-3xl font-semibold mb-4 py-3">
