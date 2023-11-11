@@ -50,7 +50,9 @@ const SongList = ({ songs }) => {
                     ? "/assets/icons/fi_pause.svg"
                     : "/assets/icons/fi_play.svg"
                 }
-                className="shared-icon w-8 h-8 cursor-pointer hover:bg-gray-200"
+                className={`shared-icon w-8 h-8 cursor-pointer hover:bg-gray-200 ${
+                  song === currentSong && "bg-gray-200"
+                }`}
                 onClick={() => handlePlayClick(song)}
               />
               <img
