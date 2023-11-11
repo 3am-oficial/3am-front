@@ -45,11 +45,6 @@ const SongList = ({ songs }) => {
             <div className="flex space-x-5 items-center sm:w-full justify-end">
               <audio ref={audioRef} />
               <img
-                src="/assets/icons/shared.svg"
-                className="shared-icon w-8 h-8 cursor-pointer hover:bg-gray-200"
-                onClick={() => handleShareClick(song, "song")}
-              />
-              <img
                 src={
                   song === currentSong
                     ? "/assets/icons/fi_pause.svg"
@@ -57,6 +52,11 @@ const SongList = ({ songs }) => {
                 }
                 className="shared-icon w-8 h-8 cursor-pointer hover:bg-gray-200"
                 onClick={() => handlePlayClick(song)}
+              />
+              <img
+                src="/assets/icons/shared.svg"
+                className="shared-icon w-8 h-8 cursor-pointer hover:bg-gray-200"
+                onClick={() => handleShareClick(song, "song")}
               />
             </div>
           </li>
