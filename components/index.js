@@ -12,3 +12,5 @@ export { default as Select } from "./Select/Select";
 export { default as Deploy } from "./Deploy/Deploy";
 export { default as SocialMedia } from "./SocialMedia/SocialMedia";
 export { default as Sections } from "./Sections/Sections";
+export { default as Loader } from "./Loader/Loader";
+export { default as ProgressBar } from "./ProgressBar/ProgressBar";

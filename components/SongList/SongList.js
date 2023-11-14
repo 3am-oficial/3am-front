@@ -1,32 +1,51 @@
 import React, { useState, useRef } from "react";
 import { handleShareClick } from "@/utils/sharedLink";
+import { Loader, ProgressBar } from "@/components";
 
 const SongList = ({ songs }) => {
-  const [currentSong, setCurrentSong] = useState(null);
+  const [currentSongIndex, setCurrentSongIndex] = useState(null);
+  const [loading, setLoading] = useState(false);
   const audioRef = useRef();
 
-  const playSong = (song) => {
-    if (currentSong) {
-      // Si hay una canción en reproducción, la pausamos antes de reproducir la nueva
+  const playSong = (songIndex) => {
+    setLoading(true);
+
+    const song = songs[songIndex];
+
+    if (audioRef.current) {
       audioRef.current.pause();
     }
 
-    // Establecer la nueva canción como la canción actual
-    setCurrentSong(song);
+    setCurrentSongIndex(songIndex);
 
-    // Reproducir la nueva canción
     audioRef.current.src = song.file;
-    audioRef.current.play();
+
+    audioRef.current.onloadeddata = () => {
+      audioRef.current.play();
+      setLoading(false);
+    };
   };
 
-  const handlePlayClick = (song) => {
-    if (song === currentSong) {
-      // Si se hace clic en la misma canción, pausarla
+  const handlePlayClick = (songIndex) => {
+    if (songIndex === currentSongIndex) {
       audioRef.current.pause();
-      setCurrentSong(null);
+      setCurrentSongIndex(null);
     } else {
-      playSong(song);
+      playSong(songIndex);
     }
+  };
+
+  const handleNextClick = () => {
+    const nextSongIndex = (currentSongIndex + 1) % songs.length;
+    playSong(nextSongIndex);
+  };
+
+  const handlePreviewClick = () => {
+    let prevSongIndex = currentSongIndex - 1;
+    if (prevSongIndex < 0) {
+      prevSongIndex = songs.length - 1;
+    }
+    playSong(prevSongIndex);
   };
 
   return (
@@ -44,17 +63,45 @@ const SongList = ({ songs }) => {
             </div>
             <div className="flex space-x-5 items-center sm:w-full justify-end">
               <audio ref={audioRef} />
-              <img
-                src={
-                  song === currentSong
-                    ? "/assets/icons/fi_pause.svg"
-                    : "/assets/icons/fi_play.svg"
-                }
-                className={`shared-icon w-8 h-8 cursor-pointer hover:bg-gray-200 ${
-                  song === currentSong && "bg-gray-200"
-                }`}
-                onClick={() => handlePlayClick(song)}
-              />
+
+              {loading && index === currentSongIndex ? (
+                <Loader />
+              ) : (
+                <div className="flex space-x-5">
+                  <img
+                    src="/assets/icons/preview.svg"
+                    onClick={handlePreviewClick}
+                    className={
+                      !loading && index === currentSongIndex
+                        ? "inline cursor-pointer hover:bg-gray-200 p-1 rounded-full"
+                        : "hidden"
+                    }
+                  />
+                  <img
+                    src={
+                      index === currentSongIndex
+                        ? "/assets/icons/fi_pause.svg"
+                        : "/assets/icons/fi_play.svg"
+                    }
+                    className={`shared-icon w-8 h-8 cursor-pointer hover:bg-gray-200 ${
+                      index === currentSongIndex && "bg-gray-200"
+                    }`}
+                    onClick={() => handlePlayClick(index)}
+                  />
+                  <img
+                    src="/assets/icons/next.svg"
+                    onClick={handleNextClick}
+                    className={
+                      !loading && index === currentSongIndex
+                        ? "inline cursor-pointer hover:bg-gray-200  p-1 rounded-full"
+                        : "hidden"
+                    }
+                  />
+                  {!loading && index === currentSongIndex && (
+                    <ProgressBar audioRef={audioRef} />
+                  )}
+                </div>
+              )}
               <img
                 src="/assets/icons/shared.svg"
                 className="shared-icon w-8 h-8 cursor-pointer hover:bg-gray-200"
