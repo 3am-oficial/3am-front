@@ -2,52 +2,13 @@ import React, { useState, useRef } from "react";
 import { handleShareClick } from "@/utils/sharedLink";
 import { Loader, ProgressBar } from "@/components";
 
-const SongList = ({ songs }) => {
-  const [currentSongIndex, setCurrentSongIndex] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const audioRef = useRef();
-
-  const playSong = (songIndex) => {
-    setLoading(true);
-
-    const song = songs[songIndex];
-
-    if (audioRef.current) {
-      audioRef.current.pause();
-    }
-
-    setCurrentSongIndex(songIndex);
-
-    audioRef.current.src = song.file;
-
-    audioRef.current.onloadeddata = () => {
-      audioRef.current.play();
-      setLoading(false);
-    };
-  };
-
-  const handlePlayClick = (songIndex) => {
-    if (songIndex === currentSongIndex) {
-      audioRef.current.pause();
-      setCurrentSongIndex(null);
-    } else {
-      playSong(songIndex);
-    }
-  };
-
-  const handleNextClick = () => {
-    const nextSongIndex = (currentSongIndex + 1) % songs.length;
-    playSong(nextSongIndex);
-  };
-
-  const handlePreviewClick = () => {
-    let prevSongIndex = currentSongIndex - 1;
-    if (prevSongIndex < 0) {
-      prevSongIndex = songs.length - 1;
-    }
-    playSong(prevSongIndex);
-  };
-
+const SongList = ({
+  songs,
+  currentSongIndex,
+  handlePlayClick,
+  audioRef,
+  loading,
+}) => {
   return (
     <div className="w-full lg:p-5">
       <ul className="space-y-5">
@@ -69,15 +30,6 @@ const SongList = ({ songs }) => {
               ) : (
                 <div className="flex space-x-5">
                   <img
-                    src="/assets/icons/preview.svg"
-                    onClick={handlePreviewClick}
-                    className={
-                      !loading && index === currentSongIndex
-                        ? "inline cursor-pointer hover:bg-gray-200 p-1 rounded-full"
-                        : "hidden"
-                    }
-                  />
-                  <img
                     src={
                       index === currentSongIndex
                         ? "/assets/icons/fi_pause.svg"
@@ -88,18 +40,6 @@ const SongList = ({ songs }) => {
                     }`}
                     onClick={() => handlePlayClick(index)}
                   />
-                  <img
-                    src="/assets/icons/next.svg"
-                    onClick={handleNextClick}
-                    className={
-                      !loading && index === currentSongIndex
-                        ? "inline cursor-pointer hover:bg-gray-200  p-1 rounded-full"
-                        : "hidden"
-                    }
-                  />
-                  {!loading && index === currentSongIndex && (
-                    <ProgressBar audioRef={audioRef} />
-                  )}
                 </div>
               )}
               <img
