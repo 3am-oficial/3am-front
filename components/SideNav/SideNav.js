@@ -59,19 +59,19 @@ function SideNav() {
               className="hover:bg-gray-200 hover:text-black font-medium pl-12 text-lg cursor-pointer px-5 py-3"
               onClick={() => nextPage("/")}
             >
-              Inicio
+              Home
             </li>
             <li
               className="hover:bg-gray-200 hover:text-black font-medium pl-12 text-lg cursor-pointer px-5 py-3"
               onClick={() => nextPage("/aboutUs")}
             >
-              Sobre nosotros
+              About Us
             </li>
             <li
               className="hover:bg-gray-200 hover:text-black font-medium pl-12 text-lg cursor-pointer px-5 py-3"
               onClick={() => nextPage("/events")}
             >
-              Eventos
+              Tour
             </li>
           </ul>
           <div className="h-2/4 flex">
