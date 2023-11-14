@@ -58,7 +58,7 @@ function SongsPage({ Album, loadingServer }) {
 
   return (
     <div className="space-y-5 min-height-screen pt-[90px]">
-      <div className="container-album p-10 h-full space-y-5">
+      <div className="container-album lg:p-10 p-2 h-full space-y-5">
         <Head>
           <title>
             {Album.name} - {Album.artist}

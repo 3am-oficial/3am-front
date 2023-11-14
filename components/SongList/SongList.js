@@ -20,7 +20,7 @@ const SongList = ({
                 alt=""
                 className="w-10 h-10 rounded-lg"
               />
-              <p style={{ whiteSpace: "nowrap" }}>{song.name}</p>{" "}
+              <p>{song.name}</p>{" "}
             </div>
             <div className="flex space-x-5 items-center sm:w-full justify-end">
               <audio ref={audioRef} />
@@ -35,7 +35,7 @@ const SongList = ({
                         ? "/assets/icons/fi_pause.svg"
                         : "/assets/icons/fi_play.svg"
                     }
-                    className={`shared-icon w-8 h-8 cursor-pointer hover:bg-gray-200 ${
+                    className={`shared-icon w-20 lg:w-8 sm:w-8 cursor-pointer hover:bg-gray-200 ${
                       index === currentSongIndex && "bg-gray-200"
                     }`}
                     onClick={() => handlePlayClick(index)}
