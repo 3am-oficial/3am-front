@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import { AuthProvider } from "@/utils/authContext";
 import { SideNav, Footer, Deploy } from "@/components";
 import "react-toastify/dist/ReactToastify.css";
+import "react-h5-audio-player/lib/styles.css";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {

@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { handleShareClick } from "@/utils/sharedLink";
-import { Loader, ProgressBar } from "@/components";
+import { Loader } from "@/components";
 
 const SongList = ({
   songs,
@@ -21,7 +21,7 @@ const SongList = ({
                 alt=""
                 className="w-10 h-10 rounded-lg"
               />
-              <p>{song.name}</p>{" "}
+              <p>{song.name}</p>
             </div>
             <div className="flex space-x-5 items-center sm:w-full justify-end">
               <audio ref={audioRef} />
