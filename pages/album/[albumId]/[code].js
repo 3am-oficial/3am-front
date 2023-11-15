@@ -126,7 +126,9 @@ function SongsPage({ Album, loadingServer }) {
           <div className="flex w-2/4">
             <Player
               audio={songSelected.file}
+              autoPlay
               onPlaying={onPlaying}
+              showSkipControls
               audioRef={audioRef}
               handlePreviewClick={handlePreviewClick}
               handleNextClick={handleNextClick}
