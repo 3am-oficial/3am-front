@@ -7,6 +7,7 @@ import { handleShareClick } from "@/utils/sharedLink";
 
 function SongsPage({ Album, loadingServer }) {
   const [currentSongIndex, setCurrentSongIndex] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [loading, setLoading] = useState(false);
   const [songSelected, setSongSelected] = useState({});
   const audioRef = useRef();
@@ -35,12 +36,18 @@ function SongsPage({ Album, loadingServer }) {
   };
 
   const handlePlayClick = (songIndex) => {
+    setIsPlaying(!isPlaying);
     if (songIndex === currentSongIndex) {
-      audioRef.current.pause();
-      setCurrentSongIndex(null);
+      !isPlaying ? audioRef.current.play() : audioRef.current.pause();
     } else {
       playSong(songIndex);
     }
+  };
+
+  const closePlayer = () => {
+    setIsPlaying(false);
+    setCurrentSongIndex(null);
+    audioRef.current.pause();
   };
 
   const handleNextClick = () => {
@@ -109,6 +116,7 @@ function SongsPage({ Album, loadingServer }) {
         {!loadingServer && (
           <SongList
             songs={Album.songs}
+            isPlaying={isPlaying}
             currentSongIndex={currentSongIndex}
             handlePlayClick={handlePlayClick}
             handleNextClick={handleNextClick}
@@ -119,28 +127,28 @@ function SongsPage({ Album, loadingServer }) {
         )}
       </div>
 
-      {!loading && (currentSongIndex || currentSongIndex === 0) && (
-        <div className="fixed bottom-0 z-10 bg-black p-4 shadow-lg w-full h-24 flex space-x-10">
-          <div className="flex items-end space-x-5 just">
-            <img src={Album.image} width={"60px"} />
-            <p className="text-song">{songSelected.name}</p>
+      {(currentSongIndex || currentSongIndex === 0) && (
+        <div className="fixed bottom-0 z-10 bg-black p-4 shadow-lg w-full h-28 flex space-x-10">
+          <div className="flex items-end flex-1">
+            <img src={Album.image} width="80px" />
+            <p className="text-song ml-3">{songSelected.name}</p>
           </div>
-          <div className="w-full flex">
+          <div className="flex w-2/4">
             {!loading && (currentSongIndex || currentSongIndex === 0) && (
-              <div className="w-1/2 flex flex-col m-auto">
-                <div className="flex space-x-5 w-full justify-center">
+              <div className="w-full flex flex-col m-auto">
+                <div className="flex space-x-5 w-full justify-center items-center">
                   <img
                     src="/assets/icons/preview.svg"
                     onClick={handlePreviewClick}
                     className={
                       !loading && (currentSongIndex || currentSongIndex === 0)
-                        ? "inline cursor-pointer hover:bg-gray-200 p-1 rounded-full"
+                        ? "inline cursor-pointer hover:bg-gray-200 p-1 rounded-full w-6 h-6"
                         : "hidden"
                     }
                   />
                   <img
                     src={
-                      currentSongIndex || currentSongIndex === 0
+                      isPlaying
                         ? "/assets/icons/fi_pause.svg"
                         : "/assets/icons/fi_play.svg"
                     }
@@ -155,7 +163,7 @@ function SongsPage({ Album, loadingServer }) {
                     onClick={handleNextClick}
                     className={
                       !loading && (currentSongIndex || currentSongIndex === 0)
-                        ? "inline cursor-pointer hover:bg-gray-200  p-1 rounded-full"
+                        ? "inline cursor-pointer hover:bg-gray-200  p-1 rounded-full w-6 h-6"
                         : "hidden"
                     }
                   />
@@ -163,6 +171,23 @@ function SongsPage({ Album, loadingServer }) {
                 <ProgressBar audioRef={audioRef} />
               </div>
             )}
+          </div>
+          <div className="flex-1">
+            <svg
+              onClick={closePlayer}
+              className="w-5 h-5 cursor-pointer ml-auto"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
           </div>
         </div>
       )}

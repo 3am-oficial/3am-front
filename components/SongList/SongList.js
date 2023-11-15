@@ -8,6 +8,7 @@ const SongList = ({
   handlePlayClick,
   audioRef,
   loading,
+  isPlaying,
 }) => {
   return (
     <div className="w-full lg:p-5">
@@ -31,7 +32,7 @@ const SongList = ({
                 <div className="flex space-x-5">
                   <img
                     src={
-                      index === currentSongIndex
+                      index === currentSongIndex && isPlaying
                         ? "/assets/icons/fi_pause.svg"
                         : "/assets/icons/fi_play.svg"
                     }

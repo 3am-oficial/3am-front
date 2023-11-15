@@ -58,18 +58,22 @@ const ProgressBar = ({ audioRef }) => {
   }, [audioRef]);
 
   return (
-    <div className="progress-bar cursor-pointer">
-      <div
-        className="progress-bar__progress"
-        style={{ width: `${progress}%` }}
-        onMouseDown={handleDragStart}
-        onMouseMove={handleDrag}
-        onMouseUp={handleDragEnd}
-        onMouseLeave={handleDragEnd}
-      ></div>
-      <div className="progress-bar__time">
-        <span>{calculateTime(audioRef.current.currentTime)}</span>
-        <span>{calculateTime(duration)}</span>
+    <div className="flex items-center mt-2">
+      <div className="text-white text-xs pr-2">
+        {calculateTime(audioRef.current.currentTime)}
+      </div>
+      <div className="progress-bar">
+        <div
+          className="progress-bar__progress"
+          style={{ width: `${progress}%` }}
+          onMouseDown={handleDragStart}
+          onMouseMove={handleDrag}
+          onMouseUp={handleDragEnd}
+          onMouseLeave={handleDragEnd}
+        ></div>
+      </div>
+      <div className="text-white text-xs pl-2">
+        {calculateTime(audioRef.current.duration)}
       </div>
     </div>
   );
