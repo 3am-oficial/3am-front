@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 
 import { AxiosServer } from "@/services";
-import { SongList, ProgressBar } from "@/components";
+import { SongList, ProgressBar, Player } from "@/components";
 import Head from "next/head";
 import { handleShareClick } from "@/utils/sharedLink";
 
@@ -14,31 +14,19 @@ function SongsPage({ Album, loadingServer }) {
 
   const playSong = (songIndex) => {
     setLoading(true);
-
     const song = Album.songs[songIndex];
     setSongSelected(song);
-    console.log(Album, "Album");
-
-    console.log(songSelected, "songSelectedsongSelected");
-
-    if (audioRef.current) {
-      audioRef.current.pause();
-    }
-
     setCurrentSongIndex(songIndex);
-
-    audioRef.current.src = song.file;
-
-    audioRef.current.onloadeddata = () => {
-      audioRef.current.play();
-      setLoading(false);
-    };
+    setIsPlaying(true);
+    setLoading(false);
   };
 
   const handlePlayClick = (songIndex) => {
     setIsPlaying(!isPlaying);
     if (songIndex === currentSongIndex) {
-      !isPlaying ? audioRef.current.play() : audioRef.current.pause();
+      !isPlaying
+        ? audioRef.current.audio.current.play()
+        : audioRef.current.audio.current.pause();
     } else {
       playSong(songIndex);
     }
@@ -47,7 +35,11 @@ function SongsPage({ Album, loadingServer }) {
   const closePlayer = () => {
     setIsPlaying(false);
     setCurrentSongIndex(null);
-    audioRef.current.pause();
+    audioRef.current.audio.current.pause();
+  };
+
+  const onPlaying = (e) => {
+    e.type === "pause" ? setIsPlaying(false) : setIsPlaying(true);
   };
 
   const handleNextClick = () => {
@@ -64,8 +56,8 @@ function SongsPage({ Album, loadingServer }) {
   };
 
   return (
-    <div className="space-y-5 min-height-screen pt-[90px]">
-      <div className="container-album lg:p-10 p-2 h-full space-y-5">
+    <div className="space-y-5 min-height-screen lg:pt-[90px] pt-10">
+      <div className="container-album lg:p-10 p-5 h-full space-y-5">
         <Head>
           <title>
             {Album.name} - {Album.artist}
@@ -119,8 +111,6 @@ function SongsPage({ Album, loadingServer }) {
             isPlaying={isPlaying}
             currentSongIndex={currentSongIndex}
             handlePlayClick={handlePlayClick}
-            handleNextClick={handleNextClick}
-            handlePreviewClick={handlePreviewClick}
             audioRef={audioRef}
             loading={loading}
           />
@@ -134,43 +124,13 @@ function SongsPage({ Album, loadingServer }) {
             <p className="text-song lg:ml-3 text-center">{songSelected.name}</p>
           </div>
           <div className="flex w-2/4">
-            {!loading && (currentSongIndex || currentSongIndex === 0) && (
-              <div className="w-full flex flex-col m-auto">
-                <div className="flex space-x-5 w-full justify-center items-center">
-                  <img
-                    src="/assets/icons/preview.svg"
-                    onClick={handlePreviewClick}
-                    className={
-                      !loading && (currentSongIndex || currentSongIndex === 0)
-                        ? "inline cursor-pointer hover:bg-gray-200 p-1 rounded-full w-6 h-6"
-                        : "hidden"
-                    }
-                  />
-                  <img
-                    src={
-                      isPlaying
-                        ? "/assets/icons/fi_pause.svg"
-                        : "/assets/icons/fi_play.svg"
-                    }
-                    className={`shared-icon w-8 h-8 cursor-pointer hover:bg-gray-200 ${
-                      (currentSongIndex || currentSongIndex === 0) &&
-                      "bg-gray-200"
-                    }`}
-                    onClick={() => handlePlayClick(currentSongIndex)}
-                  />
-                  <img
-                    src="/assets/icons/next.svg"
-                    onClick={handleNextClick}
-                    className={
-                      !loading && (currentSongIndex || currentSongIndex === 0)
-                        ? "inline cursor-pointer hover:bg-gray-200  p-1 rounded-full w-6 h-6"
-                        : "hidden"
-                    }
-                  />
-                </div>
-                <ProgressBar audioRef={audioRef} />
-              </div>
-            )}
+            <Player
+              audio={songSelected.file}
+              onPlaying={onPlaying}
+              audioRef={audioRef}
+              handlePreviewClick={handlePreviewClick}
+              handleNextClick={handleNextClick}
+            />
           </div>
           <div className="flex-1">
             <svg
