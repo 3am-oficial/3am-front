@@ -129,9 +129,9 @@ function SongsPage({ Album, loadingServer }) {
 
       {(currentSongIndex || currentSongIndex === 0) && (
         <div className="fixed bottom-0 z-10 bg-black p-4 shadow-lg w-full h-28 flex space-x-10">
-          <div className="flex items-end flex-1">
+          <div className="flex items-end flex-1 flex-col lg:flex-row">
             <img src={Album.image} width="80px" />
-            <p className="text-song ml-3">{songSelected.name}</p>
+            <p className="text-song lg:ml-3 text-center">{songSelected.name}</p>
           </div>
           <div className="flex w-2/4">
             {!loading && (currentSongIndex || currentSongIndex === 0) && (
@@ -175,7 +175,7 @@ function SongsPage({ Album, loadingServer }) {
           <div className="flex-1">
             <svg
               onClick={closePlayer}
-              className="w-5 h-5 cursor-pointer ml-auto"
+              className="w-5 h-5 cursor-pointer lg:ml-auto"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"

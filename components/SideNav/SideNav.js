@@ -53,7 +53,7 @@ function SideNav() {
         </div>
       </header>
       {open && (
-        <div className="flex z-10 w-full sm:w-1/4 h-full fixed bg-black flex-col space-y-5 mt-[45px] lg:mt-[90px] slideInLeft">
+        <div className="flex z-20 w-full sm:w-1/4 h-full fixed bg-black flex-col space-y-5 mt-[45px] lg:mt-[90px] slideInLeft">
           <ul className="space-y-5 h-1/4 pt-5">
             <li
               className="hover:bg-gray-200 hover:text-black font-medium pl-12 text-lg cursor-pointer px-5 py-3"
