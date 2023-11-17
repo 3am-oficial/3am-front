@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { handleShareClick } from "@/utils/sharedLink";
 import { Loader } from "@/components";
+import { useAuth } from "@/utils/authContext";
 
 const SongList = ({
   songs,
@@ -10,12 +11,15 @@ const SongList = ({
   loading,
   isPlaying,
 }) => {
+  const { user } = useAuth();
+
   return (
     <div className="w-full lg:p-5">
       <ul className="space-y-5">
         {songs.map((song, index) => (
           <li key={index} className="song-items">
             <div className="flex items-center lg:space-x-5 space-x-2 w-full">
+              <span className="w-5">{index + 1}</span>
               <img
                 src={song.image ? song.image : "/assets/images/imageUnknow.jpg"}
                 alt=""
@@ -45,7 +49,11 @@ const SongList = ({
               )}
               <img
                 src="/assets/icons/shared.svg"
-                className="shared-icon w-8 h-8 cursor-pointer hover:bg-gray-200"
+                className={`${
+                  !user
+                    ? "hidden"
+                    : "shared-icon w-8 h-8 cursor-pointer hover:bg-gray-200"
+                }`}
                 onClick={() => handleShareClick(song, "song")}
               />
             </div>

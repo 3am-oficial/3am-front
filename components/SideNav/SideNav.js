@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { SocialMedia } from "@/components";
+import { useAuth } from "@/utils/authContext";
 
 function SideNav() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
+  const { user } = useAuth();
 
   const openMenu = (value) => {
     setOpen(value);
@@ -30,7 +32,7 @@ function SideNav() {
   }, [open]);
 
   return (
-    <div className="bg-black">
+    <div className={`${!user ? "hidden" : "inline"} bg-black`}>
       <header className="fixed z-10 bg-black w-full">
         <div className="flex justify-between items-center px-16">
           <div className="transform hover:bg-gray-200 rounded-full p-1.5">
@@ -43,13 +45,11 @@ function SideNav() {
               onClick={() => openMenu(!open)}
             />
           </div>
-          <a href="/">
-            <img
-              src="/assets/images/logo.webp"
-              alt="3AM Logo"
-              className="w-20 lg:w-40"
-            />
-          </a>
+          <img
+            src="/assets/images/logo.webp"
+            alt="3AM Logo"
+            className="w-20 lg:w-40"
+          />
         </div>
       </header>
       {open && (

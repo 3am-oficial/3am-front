@@ -4,6 +4,7 @@ import { AxiosServer } from "@/services";
 import { SongList, ProgressBar, Player } from "@/components";
 import Head from "next/head";
 import { handleShareClick } from "@/utils/sharedLink";
+import { useAuth } from "@/utils/authContext";
 
 function SongsPage({ Album, loadingServer }) {
   const [currentSongIndex, setCurrentSongIndex] = useState(null);
@@ -11,6 +12,7 @@ function SongsPage({ Album, loadingServer }) {
   const [loading, setLoading] = useState(false);
   const [songSelected, setSongSelected] = useState({});
   const audioRef = useRef();
+  const { user } = useAuth();
 
   const playSong = (songIndex) => {
     setLoading(true);
@@ -56,7 +58,13 @@ function SongsPage({ Album, loadingServer }) {
   };
 
   return (
-    <div className="space-y-5 min-height-screen lg:pt-[90px] pt-10">
+    <div
+      className={`${
+        !user
+          ? "space-y-5 min-height-screen"
+          : "space-y-5 min-height-screen lg:pt-[90px] pt-10"
+      }`}
+    >
       <div className="container-album lg:p-10 p-5 h-full space-y-5">
         <Head>
           <title>
@@ -77,7 +85,7 @@ function SongsPage({ Album, loadingServer }) {
           <meta property="og:image" content="/assets/images/imageUnknow.jpg" />
           <meta name="twitter:card" content="summary" />
         </Head>
-        <a href="/admin" className="go-back">
+        <a href="/admin" className={`${!user ? "hidden" : "inline go-back"}`}>
           <div className="flex space-x-2">
             <img src="/assets/icons/backarrow.svg" alt="imageArrow" />
             <p>Regresar</p>
@@ -100,7 +108,9 @@ function SongsPage({ Album, loadingServer }) {
           </div>
           <img
             src="/assets/icons/shared.svg"
-            className="shared-icon w-12 cursor-pointer"
+            className={`${
+              !user ? "hidden" : "shared-icon w-12 cursor-pointer"
+            }`}
             onClick={() => handleShareClick(Album, "album")}
           />
         </div>

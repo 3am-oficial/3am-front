@@ -2,11 +2,12 @@ import React, { useState, useRef } from "react";
 import { AxiosServer } from "@/services";
 import { handleShareClick } from "@/utils/sharedLink";
 import { Player } from "@/components";
+import { useAuth } from "@/utils/authContext";
 
 const SongList = ({ Song }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef();
-
+  const { user } = useAuth();
   const playSong = () => {
     setIsPlaying(true);
 
@@ -79,7 +80,11 @@ const SongList = ({ Song }) => {
                   />
                   <img
                     src="/assets/icons/shared.svg"
-                    className="shared-icon w-8 h-8 cursor-pointer hover:bg-gray-200 "
+                    className={
+                      !user
+                        ? "hidden"
+                        : "shared-icon w-8 h-8 cursor-pointer hover:bg-gray-200 "
+                    }
                     onClick={() => handleShareClick(Song, "song")}
                   />
                 </div>
