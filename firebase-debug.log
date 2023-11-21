@@ -1,0 +1,68 @@
+[debug] [2023-11-21T16:20:41.514Z] ----------------------------------------------------------------------
+[debug] [2023-11-21T16:20:41.515Z] Command:       /Users/vemiliogp/.volta/tools/image/node/18.18.0/bin/node /Users/vemiliogp/Documents/3am-oficial/3am-front/node_modules/.bin/firebase deploy
+[debug] [2023-11-21T16:20:41.515Z] CLI Version:   12.8.1
+[debug] [2023-11-21T16:20:41.515Z] Platform:      darwin
+[debug] [2023-11-21T16:20:41.515Z] Node Version:  v18.18.0
+[debug] [2023-11-21T16:20:41.519Z] Time:          Tue Nov 21 2023 17:20:41 GMT+0100 (GMT+01:00)
+[debug] [2023-11-21T16:20:41.519Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-21T16:20:41.520Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-11-21T16:20:41.568Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-21T16:20:41.569Z] > authorizing via signed-in user (vemiliogp@gmail.com)
+[debug] [2023-11-21T16:20:41.569Z] [iam] checking project am-oficial for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-11-21T16:20:41.569Z] > refreshing access token with scopes: []
+[debug] [2023-11-21T16:20:41.569Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-11-21T16:20:41.569Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-11-21T16:20:41.716Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-11-21T16:20:41.716Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-11-21T16:20:41.729Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions [none]
+[debug] [2023-11-21T16:20:41.729Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions x-goog-quota-user=projects/am-oficial
+[debug] [2023-11-21T16:20:41.730Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-11-21T16:20:41.883Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-11-21T16:20:41.883Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-11-21T16:20:42.519Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions 200
+[debug] [2023-11-21T16:20:42.519Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/am-oficial:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-11-21T16:20:42.521Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial [none]
+[debug] [2023-11-21T16:20:42.818Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial 200
+[debug] [2023-11-21T16:20:42.819Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/am-oficial {"projectId":"am-oficial","projectNumber":"790235731261","displayName":"3am-oficial","name":"projects/am-oficial","resources":{"hostingSite":"am-oficial","storageBucket":"am-oficial.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_480f6e2d-dfa9-485c-9733-30e9f0cce5fd"}
+[debug] [2023-11-21T16:20:43.806Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/am-oficial/sites pageToken=&pageSize=10
+[debug] [2023-11-21T16:20:44.974Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/am-oficial/sites 200
+[debug] [2023-11-21T16:20:44.974Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/am-oficial/sites {"sites":[{"name":"projects/am-oficial/sites/am-oficial","defaultUrl":"https://am-oficial.web.app","appId":"1:790235731261:web:9222ac458547a3891b2154","type":"DEFAULT_SITE"}]}
+[debug] [2023-11-21T16:20:44.975Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:790235731261:web:9222ac458547a3891b2154/config [none]
+[debug] [2023-11-21T16:20:45.997Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:790235731261:web:9222ac458547a3891b2154/config 200
+[debug] [2023-11-21T16:20:45.998Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:790235731261:web:9222ac458547a3891b2154/config {"projectId":"am-oficial","appId":"1:790235731261:web:9222ac458547a3891b2154","storageBucket":"am-oficial.appspot.com","locationId":"us-central","apiKey":"AIzaSyAGbiy04HBgDIugFks51FGRJ3x0brlB5jI","authDomain":"am-oficial.firebaseapp.com","messagingSenderId":"790235731261","measurementId":"G-HDNV1PT0M1"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[info]    Linting and checking validity of types ...
+
+[info]    Creating an optimized production build ...
+
+[info]  ✓ Compiled successfully
+
+[info]    Collecting page data ...
+
+[info] unhandledRejection Error [FirebaseError]: Firebase: Error (auth/invalid-api-key).
+    at createErrorInternal (file:///Users/vemiliogp/Documents/3am-oficial/3am-front/node_modules/@firebase/auth/dist/node-esm/totp-64a935f2.js:532:40)
+    at _assert (file:///Users/vemiliogp/Documents/3am-oficial/3am-front/node_modules/@firebase/auth/dist/node-esm/totp-64a935f2.js:536:15)
+    at Component.instanceFactory (file:///Users/vemiliogp/Documents/3am-oficial/3am-front/node_modules/@firebase/auth/dist/node-esm/totp-64a935f2.js:6826:9)
+    at Provider.getOrInitializeService (file:///Users/vemiliogp/Documents/3am-oficial/3am-front/node_modules/@firebase/component/dist/esm/index.esm2017.js:290:39)
+    at Provider.initialize (file:///Users/vemiliogp/Documents/3am-oficial/3am-front/node_modules/@firebase/component/dist/esm/index.esm2017.js:234:31)
+    at initializeAuth (file:///Users/vemiliogp/Documents/3am-oficial/3am-front/node_modules/@firebase/auth/dist/node-esm/totp-64a935f2.js:3185:27)
+    at getAuth (file:///Users/vemiliogp/Documents/3am-oficial/3am-front/node_modules/@firebase/auth/dist/node-esm/totp-64a935f2.js:6887:18)
+    at /Users/vemiliogp/Documents/3am-oficial/3am-front/.next/server/chunks/648.js:1:11759 {
+  type: 'FirebaseError',
+  code: 'auth/invalid-api-key',
+  customData: { appName: '[DEFAULT]' }
+}
+
+[debug] [2023-11-21T16:20:52.066Z] Error: ENOENT: no such file or directory, open '/Users/vemiliogp/Documents/3am-oficial/3am-front/.next/export-marker.json'
+[error] 
+[error] Error: An unexpected error has occurred.
