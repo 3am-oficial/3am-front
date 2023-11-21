@@ -11,7 +11,6 @@ const Player = ({
 }) => {
   return (
     <AudioPlayer
-      className="bg-transparent"
       autoPlay={autoPlay}
       showSkipControls={showSkipControls}
       src={audio}

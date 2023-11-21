@@ -339,3 +339,7 @@ footer {
 .rhap_time {
   color: white !important;
 }
+
+.rhap_container {
+  background-color: transparent !important;
+}
