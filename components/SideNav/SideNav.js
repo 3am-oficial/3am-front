@@ -32,7 +32,7 @@ function SideNav() {
   }, [open]);
 
   return (
-    <div className={`${!user ? "hidden" : "inline"} bg-black`}>
+    <div className={` bg-black`}>
       <header className="fixed z-10 bg-black w-full">
         <div className="flex justify-between items-center px-16">
           <div className="transform hover:bg-gray-200 rounded-full p-1.5">
@@ -63,6 +63,12 @@ function SideNav() {
             </li>
             <li
               className="hover:bg-gray-200 hover:text-black font-medium pl-12 text-lg cursor-pointer px-5 py-3"
+              onClick={() => nextPage("/merch")}
+            >
+              Merch
+            </li>
+            <li
+              className="hover:bg-gray-200 hover:text-black font-medium pl-12 text-lg cursor-pointer px-5 py-3"
               onClick={() => nextPage("/aboutUs")}
             >
               About Us
@@ -74,7 +80,7 @@ function SideNav() {
               Tour
             </li>
           </ul>
-          <div className="h-2/4 flex">
+          <div className="h-2/4 flex pointer-events-none">
             <img
               src="/assets/images/logo.webp"
               width="250px"
