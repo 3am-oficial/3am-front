@@ -54,7 +54,7 @@ function SideNav() {
       </header>
       {open && (
         <div className="flex z-20 w-full sm:w-1/4 h-full fixed bg-black flex-col space-y-5 mt-[45px] lg:mt-[90px] slideInLeft">
-          <ul className="space-y-5 h-1/4 pt-5">
+          <ul className="space-y-5 h-1/4 pt-5 z-10">
             <li
               className="hover:bg-gray-200 hover:text-black font-medium pl-12 text-lg cursor-pointer px-5 py-3"
               onClick={() => nextPage("/")}
