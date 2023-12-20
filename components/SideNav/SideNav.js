@@ -46,7 +46,7 @@ function SideNav() {
             />
           </div>
           <img
-            src="/assets/images/logo.webp"
+            src="/assets/images/logo.png"
             alt="3AM Logo"
             className="w-20 lg:w-40"
           />
@@ -54,37 +54,42 @@ function SideNav() {
       </header>
       {open && (
         <div className="flex z-20 w-full sm:w-1/4 h-full fixed bg-black flex-col space-y-5 mt-[45px] lg:mt-[90px] slideInLeft">
-          <ul className="space-y-5 h-1/4 pt-5 z-10">
+          <ul className="pt-5 z-10">
             <li
-              className="hover:bg-gray-200 hover:text-black font-medium pl-12 text-lg cursor-pointer px-5 py-3"
+              className="hover:bg-gray-200 hover:text-black font-medium pl-12 mb-4 text-lg cursor-pointer px-5 py-3"
               onClick={() => nextPage("/")}
             >
               Home
             </li>
             <li
-              className="hover:bg-gray-200 hover:text-black font-medium pl-12 text-lg cursor-pointer px-5 py-3"
+              className="hover:bg-gray-200 hover:text-black font-medium pl-12 my-4 text-lg cursor-pointer px-5 py-3"
               onClick={() => nextPage("/merch")}
             >
               Merch
             </li>
             <li
-              className="hover:bg-gray-200 hover:text-black font-medium pl-12 text-lg cursor-pointer px-5 py-3"
+              className="hover:bg-gray-200 hover:text-black font-medium pl-12 my-4 text-lg cursor-pointer px-5 py-3"
               onClick={() => nextPage("/aboutUs")}
             >
               About Us
             </li>
             <li
-              className="hover:bg-gray-200 hover:text-black font-medium pl-12 text-lg cursor-pointer px-5 py-3"
+              className="hover:bg-gray-200 hover:text-black font-medium pl-12 my-4 text-lg cursor-pointer px-5 py-3"
               onClick={() => nextPage("/events")}
             >
               Tour
             </li>
+            <li
+              className="hover:bg-gray-200 hover:text-black font-medium pl-12 my-4 text-lg cursor-pointer px-5 py-3"
+              onClick={() => nextPage("/contact")}
+            >
+              Contac Us
+            </li>
           </ul>
-          <div className="h-2/4 flex pointer-events-none">
+          <div className="h-1/4 flex pointer-events-none">
             <img
-              src="/assets/images/logo.webp"
-              width="250px"
-              height="140px"
+              src="/assets/images/logo.png"
+              width="200px"
               className="rounded-lg m-auto"
             />
           </div>

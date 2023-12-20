@@ -16,4 +16,5 @@ export { default as Loader } from "./Loader/Loader";
 export { default as ProgressBar } from "./ProgressBar/ProgressBar";
 export { default as Player } from "./Player/Player";
 export { default as Product } from "./Product/Product";
-export {default as Input} from "./Input/Input";
+export { default as Input } from "./Input/Input";
+export { default as Textarea } from "./Textarea/Textarea";

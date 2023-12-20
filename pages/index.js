@@ -11,7 +11,7 @@ export default function Home() {
         autoPlay
         muted
         loop
-        className="w-full"
+        className="w-full cursor-pointer"
       ></video>
 
       <div className="py-12"></div>
@@ -29,7 +29,7 @@ export default function Home() {
         autoPlay
         muted
         loop
-        className="w-full"
+        className="w-full cursor-pointer"
       ></video>
     </main>
   );

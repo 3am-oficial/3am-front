@@ -21,6 +21,11 @@ const SocialMedia = () => {
           <img src="/assets/icons/tiktok.svg" width="20px" />
         </a>
       </li>
+      <li className="transform hover:scale-125 hover:bg-gray-200 rounded-full p-1.5">
+        <a href="https://open.spotify.com/artist/1LU7BxbUvvuA4eNDdEO22D?si=7CqOSeG2Ro2NoH4FzPoElw" target="_blank">
+          <img src="/assets/icons/spotify.svg" width="20px" />
+        </a>
+      </li>
     </ul>
   );
 };

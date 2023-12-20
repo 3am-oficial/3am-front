@@ -45,7 +45,7 @@ const Merch = () => {
           className="w-full"
         ></video>
       </div>
-      <div className="lg:w-9/12 mx-auto py-20">
+      <div className="lg:w-9/12 mx-auto py-20 px-10">
         <Input
           value={filter}
           onChange={(e) => handleFilterChange(e.target.value)}
