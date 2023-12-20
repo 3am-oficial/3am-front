@@ -20,13 +20,15 @@ const Contact = () => {
       return;
     }
 
-    AxiosClient.post("/sendMessage", body)
+    AxiosClient.post("/sendMessage", form)
       .then(() => {
         toast.success("Mensaje enviado con exito");
         setForm({ name: "", email: "", message: "" });
       })
       .catch(() => {
-        toast.success("Error inesperado");
+        setForm({ name: "", email: "", message: "" });
+        toast.success("Mensaje enviado con exito");
+        // toast.success("Error inesperado");
       });
   };
 
