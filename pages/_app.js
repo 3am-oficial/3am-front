@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { useState } from "react";
-import { useRouter } from "next/router";
 import { ToastContainer } from "react-toastify";
 import { AuthProvider } from "@/utils/authContext";
 import { SideNav, Footer, Deploy } from "@/components";
@@ -9,27 +8,24 @@ import "react-h5-audio-player/lib/styles.css";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
-  // const targetDate = new Date("2023-12-01T00:00:00").getTime();
-  const targetDate = new Date("2023-11-06T12:39:00").getTime();
-  const [deploy, setDeploy] = useState(targetDate - new Date().getTime() < 0);
-  const router = useRouter();
-
   return (
     <AuthProvider>
       <Head>
         <title>3AM Official</title>
       </Head>
 
-      {deploy ? (
-        <>
-          <SideNav />
-          <Component {...pageProps} />
-          <Footer />
-          <ToastContainer />
-        </>
-      ) : (
-        <Deploy targetDate={targetDate} setDeploy={setDeploy} />
-      )}
+      <SideNav />
+      <div className="flex flex-col items-center justify-center min-h-screen-nav w-full text-center">
+        <iframe
+          className="scale-[1.5] lg:scale-[3] mt-20"
+          src="https://lottie.host/embed/bbadc499-93c1-4fc8-99fe-f4e2ba6776e2/4DKa2loqpV.json"
+        ></iframe>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mt-20 lg:mt-36">
+          Sitio en construcción
+        </h1>
+      </div>
+      <Footer />
+      <ToastContainer />
     </AuthProvider>
   );
 }
