@@ -32,18 +32,18 @@ function SideNav() {
   }, [open]);
 
   return (
-    <div className={` bg-black`}>
-      <header className="fixed z-10 bg-black w-full">
+    <div>
+      <header className="fixed z-10 w-full">
         <div className="flex justify-between items-center px-16">
           <div className="transform hover:bg-gray-200 rounded-full p-1.5">
-            <img
+            {/* <img
               src={
                 open ? "/assets/icons/close.svg" : "/assets/icons/burguer.svg"
               }
               alt="burguer-icon"
               className="cursor-pointer"
               onClick={() => openMenu(!open)}
-            />
+            /> */}
           </div>
           <img
             src="/assets/images/logo.png"
